@@ -1,4 +1,5 @@
 const navItems = [
+  { label: "首页", href: "#" },
   { label: "服务", href: "#services" },
   { label: "优势", href: "#why-us" },
   { label: "价格", href: "#pricing" },
@@ -64,26 +65,37 @@ const pricing = [
   },
 ];
 
+const heroPreviews = [
+  { title: "企业官网", tag: "Business", accent: "bg-brand-600" },
+  { title: "作品集网站", tag: "Portfolio", accent: "bg-ink" },
+  { title: "Landing Page", tag: "Campaign", accent: "bg-[#0EA5E9]" },
+  { title: "外贸英文官网", tag: "Global", accent: "bg-[#2563EB]" },
+];
+
 const portfolio = [
   {
     title: "律师事务所官网",
     description: "专业、可信、适合法律咨询与品牌展示",
     tags: ["企业官网", "服务业", "高信任感"],
+    tone: "from-[#ECF5FF] to-white",
   },
   {
     title: "教育机构官网",
     description: "展示课程、师资与报名入口",
     tags: ["教育培训", "课程展示", "咨询转化"],
+    tone: "from-[#EEF8FF] to-white",
   },
   {
     title: "餐饮品牌官网",
     description: "展示门店、菜单、品牌故事与联系方式",
     tags: ["餐饮品牌", "门店展示", "本地获客"],
+    tone: "from-[#F2F7FF] to-white",
   },
   {
     title: "摄影作品集网站",
     description: "展示作品、服务套餐与预约入口",
     tags: ["个人品牌", "作品集", "预约咨询"],
+    tone: "from-[#EFF6FF] to-white",
   },
 ];
 
@@ -108,14 +120,7 @@ const faqs = [
 
 function ArrowIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      className="h-4 w-4"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
+    <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
     </svg>
   );
@@ -123,14 +128,7 @@ function ArrowIcon() {
 
 function CheckIcon({ className = "text-brand-600" }: { className?: string }) {
   return (
-    <svg
-      aria-hidden="true"
-      className={`h-4 w-4 ${className}`}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2.4"
-    >
+    <svg aria-hidden="true" className={`h-4 w-4 ${className}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4">
       <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
     </svg>
   );
@@ -140,18 +138,83 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">{children}</p>;
 }
 
+function MiniWebsitePreview({ title, tag, accent }: { title: string; tag: string; accent: string }) {
+  return (
+    <div className="rounded-2xl border border-line bg-white p-4 shadow-sm">
+      <div className="flex items-center justify-between">
+        <div className="flex gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+        </div>
+        <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-semibold text-brand-700">{tag}</span>
+      </div>
+      <div className={`mt-4 h-20 rounded-xl ${accent} p-3`}>
+        <div className="h-2 w-16 rounded-full bg-white/80" />
+        <div className="mt-3 h-2 w-24 rounded-full bg-white/45" />
+        <div className="mt-2 h-2 w-14 rounded-full bg-white/35" />
+      </div>
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-ink">{title}</p>
+          <div className="mt-2 h-1.5 w-20 rounded-full bg-slate-100" />
+        </div>
+        <span className="shrink-0 rounded-full bg-ink px-3 py-1.5 text-[11px] font-semibold text-white">咨询</span>
+      </div>
+    </div>
+  );
+}
+
+function CaseVisual({ title, tone }: { title: string; tone: string }) {
+  return (
+    <div className={`bg-gradient-to-br ${tone} border-b border-line p-6`}>
+      <div className="rounded-[1.35rem] border border-line bg-white p-4 shadow-sm">
+        <div className="flex items-center justify-between border-b border-line pb-3">
+          <div className="flex items-center gap-2">
+            <span className="h-6 w-6 rounded-full bg-ink" />
+            <span className="h-2 w-24 rounded-full bg-slate-200" />
+          </div>
+          <div className="hidden gap-2 sm:flex">
+            <span className="h-2 w-10 rounded-full bg-slate-100" />
+            <span className="h-2 w-10 rounded-full bg-slate-100" />
+          </div>
+        </div>
+        <div className="mt-4 grid grid-cols-[1fr_0.72fr] gap-4">
+          <div>
+            <span className="rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-semibold text-brand-700">{title}</span>
+            <div className="mt-4 h-3 w-28 rounded-full bg-ink" />
+            <div className="mt-3 h-2 w-full rounded-full bg-slate-100" />
+            <div className="mt-2 h-2 w-2/3 rounded-full bg-slate-100" />
+            <div className="mt-5 h-8 w-24 rounded-full bg-brand-600" />
+          </div>
+          <div className="rounded-2xl bg-[#EAF3FF] p-3">
+            <div className="h-20 rounded-xl bg-white shadow-sm" />
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <span className="h-8 rounded-lg bg-white" />
+              <span className="h-8 rounded-lg bg-ink" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/82 backdrop-blur-xl">
-        <nav className="container-x flex h-16 items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/84 backdrop-blur-xl">
+        <nav className="container-x flex h-18 items-center justify-between py-3">
           <a href="#" className="flex min-w-0 items-center gap-3" aria-label="杰子建站工作室首页">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-2xl bg-ink text-sm font-semibold text-white shadow-soft">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-ink text-base font-semibold text-white shadow-soft">
               JZ
             </span>
-            <span className="truncate text-sm font-semibold text-ink">杰子建站工作室</span>
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-bold text-ink">杰子建站工作室</span>
+              <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">AI Website Studio</span>
+            </span>
           </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
             {navItems.map((item) => (
               <a key={item.href} href={item.href} className="transition hover:text-ink">
                 {item.label}
@@ -162,30 +225,30 @@ export default function Home() {
             href="#contact"
             className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700"
           >
-            立即咨询
+            免费咨询
           </a>
         </nav>
       </header>
 
-      <section className="relative pb-16 pt-14 sm:pt-20 lg:pb-20">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_0.88fr]">
+      <section className="relative pb-16 pt-12 sm:pt-20 lg:pb-20">
+        <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_0.9fr]">
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/82 px-4 py-2 text-sm font-medium text-brand-700 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-brand-500" />
-              为创业者和小微企业做可上线的专业官网
+              AI Website Studio for Small Business
             </div>
-            <h1 className="max-w-4xl text-balance text-[2.7rem] font-semibold leading-[1.08] tracking-normal text-ink sm:text-6xl lg:text-[4.8rem]">
+            <h1 className="max-w-4xl text-balance text-[2.65rem] font-semibold leading-[1.08] tracking-normal text-ink sm:text-6xl lg:text-[4.8rem]">
               让客户先信任你，再主动咨询你。
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">
-              杰子建站工作室，专注为创业者、小微企业和个人品牌制作专业官网。最快 24 小时上线，支持响应式设计、SEO 基础优化、上线部署和后期维护。
+            <p className="mt-7 max-w-xl whitespace-pre-line text-lg leading-8 text-muted">
+              {"为创业者、小微企业打造专业官网。\n最快 24 小时上线。\n支持 SEO、响应式、部署和维护。"}
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700"
               >
-                立即咨询
+                免费咨询
                 <ArrowIcon />
               </a>
               <a
@@ -205,7 +268,7 @@ export default function Home() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="glass relative rounded-[2rem] p-3">
+            <div className="glass relative rounded-[2rem] p-4">
               <div className="overflow-hidden rounded-[1.55rem] border border-line bg-white">
                 <div className="flex items-center justify-between border-b border-line px-5 py-4">
                   <div className="flex items-center gap-2">
@@ -213,33 +276,17 @@ export default function Home() {
                     <span className="h-3 w-3 rounded-full bg-[#FFD166]" />
                     <span className="h-3 w-3 rounded-full bg-[#06D6A0]" />
                   </div>
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-                    官网预览
-                  </span>
+                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">案例预览</span>
                 </div>
-                <div className="p-5">
-                  <div className="rounded-[1.4rem] border border-line bg-[#F8FBFF] p-5">
-                    <div className="flex items-center justify-between">
-                      <p className="font-semibold text-ink">Website Preview</p>
-                      <span className="h-2.5 w-2.5 rounded-full bg-brand-500" />
-                    </div>
-                    <div className="mt-5 grid grid-cols-2 gap-3">
-                      {["企业官网", "个人作品集", "Landing Page", "外贸英文官网"].map((item) => (
-                        <div key={item} className="rounded-2xl border border-line bg-white p-4 shadow-sm">
-                          <div className="mb-4 h-2 w-16 rounded-full bg-brand-100" />
-                          <p className="text-sm font-semibold text-ink">{item}</p>
-                          <div className="mt-3 h-2 w-full rounded-full bg-slate-100" />
-                          <div className="mt-2 h-2 w-2/3 rounded-full bg-slate-100" />
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-5 rounded-[1.25rem] bg-ink p-5 text-white">
-                      <p className="text-sm text-white/70">咨询转化按钮</p>
-                      <div className="mt-4 flex items-center justify-between gap-4 rounded-full bg-white px-4 py-3 text-sm font-semibold text-ink">
-                        <span>获取建站报价</span>
-                        <span className="grid h-7 w-7 place-items-center rounded-full bg-brand-600 text-white">→</span>
-                      </div>
-                    </div>
+                <div className="grid gap-4 bg-[#F8FBFF] p-5">
+                  <div className="rounded-[1.35rem] bg-ink p-5 text-white">
+                    <p className="text-sm text-white/70">Website Templates</p>
+                    <p className="mt-3 text-2xl font-semibold">不同业务，都需要一个清晰可信的官网入口。</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {heroPreviews.map((item) => (
+                      <MiniWebsitePreview key={item.title} {...item} />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -252,9 +299,7 @@ export default function Home() {
         <div className="container-x">
           <div className="max-w-2xl">
             <SectionLabel>Services</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">
-              不只是做页面，而是帮你搭建客户愿意咨询的入口。
-            </h2>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">不只是做页面，而是帮你搭建客户愿意咨询的入口。</h2>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {services.map((service) => (
@@ -272,12 +317,8 @@ export default function Home() {
         <div className="container-x">
           <div className="max-w-3xl">
             <SectionLabel>Why Us</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">
-              为什么选择杰子建站工作室
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted">
-              以接单转化为目标，控制预算、提升效率，并把页面做得专业、清晰、能上线。
-            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">为什么选择杰子建站工作室</h2>
+            <p className="mt-6 text-lg leading-8 text-muted">以接单转化为目标，控制预算、提升效率，并把页面做得专业、清晰、能上线。</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {trustItems.map((item) => (
@@ -293,20 +334,50 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="founder" className="section bg-white">
+        <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_0.78fr]">
+          <div>
+            <SectionLabel>Founder</SectionLabel>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">关于创始人</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+              我是杰子，一名飞行员，同时也是 AI 建站开发者。
+              我希望帮助创业者、小微企业和个人品牌，用更低成本、更快速度拥有自己的官网。
+              从沟通、设计到上线，全程一对一服务，尽量把复杂的建站过程变得简单、高效、可靠。
+            </p>
+            <p className="mt-7 text-lg font-semibold text-ink">—— 杰子</p>
+          </div>
+          <div className="glass rounded-[2rem] p-7">
+            <div className="flex items-center gap-5">
+              <span className="grid h-20 w-20 place-items-center rounded-full bg-ink text-2xl font-semibold text-white shadow-soft">JZ</span>
+              <div>
+                <p className="text-xl font-semibold text-ink">杰子</p>
+                <p className="mt-1 text-sm font-medium text-muted">Founder / AI Website Developer</p>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["飞行员", "AI", "Website"].map((tag) => (
+                <span key={tag} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 rounded-[1.35rem] border border-line bg-white p-5">
+              <p className="text-sm font-semibold text-brand-600">Service Style</p>
+              <p className="mt-3 leading-7 text-muted">一对一沟通，把业务信息梳理成清晰页面，让官网更快成为你的获客入口。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-8 sm:py-12">
         <div className="container-x">
           <div className="rounded-[2rem] border border-brand-100 bg-ink p-8 text-white shadow-soft sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-semibold sm:text-4xl">不知道官网怎么做？先免费规划方案。</h2>
-              <p className="mt-4 leading-8 text-white/72">
-                告诉我们你的行业、用途和参考网站，我们会帮你梳理页面结构和报价。
-              </p>
+              <p className="mt-4 leading-8 text-white/72">告诉我们你的行业、用途和参考网站，我们会帮你梳理页面结构和报价。</p>
             </div>
-            <a
-              href="#contact"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-ink transition hover:-translate-y-0.5 lg:mt-0"
-            >
-              免费咨询方案
+            <a href="#contact" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-ink transition hover:-translate-y-0.5 lg:mt-0">
+              免费规划方案
               <ArrowIcon />
             </a>
           </div>
@@ -317,18 +388,11 @@ export default function Home() {
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
             <SectionLabel>Pricing</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">
-              前期接单友好的价格，先把官网上线。
-            </h2>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">前期接单友好的价格，先把官网上线。</h2>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {pricing.map((plan) => (
-              <article
-                key={plan.name}
-                className={`rounded-[1.5rem] border p-6 ${
-                  plan.highlight ? "border-brand-100 bg-ink text-white shadow-soft" : "border-line bg-white text-ink shadow-sm"
-                }`}
-              >
+              <article key={plan.name} className={`rounded-[1.5rem] border p-6 ${plan.highlight ? "border-brand-100 bg-ink text-white shadow-soft" : "border-line bg-white text-ink shadow-sm"}`}>
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                   {plan.highlight ? <span className="rounded-full bg-white/12 px-3 py-1 text-xs font-semibold">推荐</span> : null}
@@ -355,41 +419,22 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <SectionLabel>Portfolio</SectionLabel>
-              <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">
-                四类常见接单场景，都可以快速做出专业感。
-              </h2>
+              <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">更接近真实网站的演示案例。</h2>
             </div>
             <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-brand-700">
               预约查看完整方案 <ArrowIcon />
             </a>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {portfolio.map((item, index) => (
+            {portfolio.map((item) => (
               <article key={item.title} className="overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-sm">
-                <div className="border-b border-line bg-[#F8FBFF] p-6">
-                  <div className="rounded-[1.25rem] border border-line bg-white p-5 shadow-sm">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-brand-600">Case 0{index + 1}</span>
-                      <span className="h-2.5 w-2.5 rounded-full bg-brand-500" />
-                    </div>
-                    <div className="mt-6 h-3 w-36 rounded-full bg-ink/90" />
-                    <div className="mt-4 h-2 w-full rounded-full bg-slate-100" />
-                    <div className="mt-2 h-2 w-2/3 rounded-full bg-slate-100" />
-                    <div className="mt-6 grid grid-cols-3 gap-2">
-                      <span className="h-12 rounded-2xl bg-brand-50" />
-                      <span className="h-12 rounded-2xl bg-white ring-1 ring-line" />
-                      <span className="h-12 rounded-2xl bg-ink" />
-                    </div>
-                  </div>
-                </div>
+                <CaseVisual title={item.title} tone={item.tone} />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-ink">{item.title}</h3>
                   <p className="mt-3 leading-7 text-muted">{item.description}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-                        {tag}
-                      </span>
+                      <span key={tag} className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -403,18 +448,14 @@ export default function Home() {
         <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1fr]">
           <div>
             <SectionLabel>FAQ</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">
-              开始前，你可能关心这些。
-            </h2>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">开始前，你可能关心这些。</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <details key={faq.question} className="group rounded-[1.35rem] border border-line bg-white p-5 shadow-sm">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-ink">
                   {faq.question}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-700 transition group-open:rotate-45">
-                    +
-                  </span>
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-700 transition group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 leading-7 text-muted">{faq.answer}</p>
               </details>
@@ -429,24 +470,14 @@ export default function Home() {
             <div className="grid gap-0 lg:grid-cols-[1fr_0.72fr]">
               <div className="p-8 sm:p-12">
                 <SectionLabel>Contact</SectionLabel>
-                <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-ink sm:text-5xl">
-                  准备好拥有一个专业官网吗？
-                </h2>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                  从单页展示到企业官网，我们帮你快速上线。
-                </p>
+                <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-ink sm:text-5xl">准备好拥有一个专业官网吗？</h2>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">从单页展示到企业官网，我们帮你快速上线。</p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href="mailto:hello@jiezistudio.com?subject=官网项目咨询"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700"
-                  >
-                    立即咨询
+                  <a href="mailto:shen80482@gmail.com?subject=官网项目咨询" className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700">
+                    免费咨询
                     <ArrowIcon />
                   </a>
-                  <a
-                    href="#pricing"
-                    className="inline-flex items-center justify-center rounded-full border border-line bg-white px-7 py-3.5 font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-glass"
-                  >
+                  <a href="#pricing" className="inline-flex items-center justify-center rounded-full border border-line bg-white px-7 py-3.5 font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-glass">
                     查看价格
                   </a>
                 </div>
@@ -454,9 +485,10 @@ export default function Home() {
               <div className="border-t border-line bg-white/68 p-8 sm:p-12 lg:border-l lg:border-t-0">
                 <div className="space-y-6">
                   {[
-                    ["适合项目", "单页展示 / 企业官网 / 中英文官网"],
-                    ["协作方式", "远程沟通，按阶段确认页面"],
-                    ["交付内容", "源码 + 部署协助 + 基础维护建议"],
+                    ["邮箱", "shen80482@gmail.com"],
+                    ["微信", "待补充"],
+                    ["工作时间", "9:00 - 22:00"],
+                    ["服务方式", "远程沟通 / 一对一交付"],
                   ].map(([label, value]) => (
                     <div key={label}>
                       <p className="text-sm font-semibold text-brand-600">{label}</p>
@@ -471,13 +503,15 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-line bg-white py-10">
-        <div className="container-x flex flex-col justify-between gap-6 text-sm text-muted md:flex-row md:items-center">
-          <p>© 2026 杰子建站工作室. All rights reserved.</p>
+        <div className="container-x flex flex-col justify-between gap-8 text-sm text-muted md:flex-row md:items-start">
+          <div>
+            <p className="font-bold text-ink">杰子建站工作室</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted">AI Website Studio</p>
+            <p className="mt-4 max-w-xl leading-7">专业官网制作 / AI智能建站 / 响应式网站 / SEO基础优化</p>
+          </div>
           <div className="flex flex-wrap gap-5">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="hover:text-ink">
-                {item.label}
-              </a>
+              <a key={item.href} href={item.href} className="hover:text-ink">{item.label}</a>
             ))}
           </div>
         </div>
