@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
 
 const navItems = [
@@ -18,7 +18,7 @@ const practices = [
 export default function LawPracticePage() {
   return (
     <main className="min-h-screen bg-[#f8f4ea] text-[#10213f]">
-      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" />
+      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" mark="CH" />
       <section className="mx-auto w-[min(1120px,calc(100%-32px))] py-16">
         <DemoBadge className="bg-[#10213f] text-[#f7e6b4]" />
         <h1 className="mt-6 text-4xl font-semibold sm:text-6xl">专业领域</h1>
@@ -43,4 +43,6 @@ export default function LawPracticePage() {
     </main>
   );
 }
+
+
 

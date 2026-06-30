@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../_components";
+import { BackHome, BrandFooter, DemoBadge, DemoTopbar, StudioCta, VisualFrame } from "../_components";
 
 export const metadata: Metadata = {
   title: "律师事务所官网演示 | 诚衡律师事务所 Studio Demo",
@@ -36,7 +36,7 @@ const faqs = [
 export default function LawFirmHome() {
   return (
     <main className="min-h-screen bg-[#f8f4ea] text-[#10213f]">
-      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" />
+      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" mark="CH" />
       <Link href="/work/law-firm/contact" className="fixed bottom-5 right-5 z-50 rounded-full bg-[#10213f] px-5 py-3 text-sm font-bold text-white shadow-xl shadow-[#10213f]/25 transition hover:-translate-y-0.5">
         预约咨询
       </Link>
@@ -45,9 +45,12 @@ export default function LawFirmHome() {
         <div className="border-l-4 border-[#d8b56d] pl-6">
           <DemoBadge className="bg-[#10213f] text-[#f7e6b4]" />
           <p className="mt-10 text-sm font-bold uppercase tracking-[0.32em] text-[#8a6d35]">Chengheng Law Office</p>
-          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-tight sm:text-7xl">专业法律服务官网演示</h1>
-          <p className="mt-6 max-w-2xl text-2xl font-semibold leading-snug text-[#8a6d35]">以秩序建立信任，以专业回应每一次托付。</p>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#44506a]">适合法律咨询、律师团队展示、服务领域介绍和预约咨询。这个演示站强调法律服务品牌最需要的三件事：清晰、克制、可信。</p>
+          <h1 className="mt-5 max-w-5xl text-[2.35rem] font-semibold leading-tight sm:text-7xl">
+            <span className="block sm:inline">专业法律服务</span>
+            <span className="block sm:inline">官网演示</span>
+          </h1>
+          <p className="mt-6 max-w-[18rem] text-2xl font-semibold leading-snug text-[#8a6d35] [word-break:break-all] sm:max-w-2xl">以秩序建立信任，以专业回应每一次托付。</p>
+          <p className="mt-6 max-w-[19rem] text-lg leading-8 text-[#44506a] [word-break:break-all] sm:max-w-3xl">适合法律咨询、律师团队展示、服务领域介绍和预约咨询。这个演示站强调法律服务品牌最需要的三件事：清晰、克制、可信。</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link href="/work/law-firm/contact" className="rounded-full bg-[#10213f] px-7 py-3.5 text-center font-semibold text-white shadow-lg shadow-[#10213f]/16 transition hover:-translate-y-0.5">
               预约咨询
@@ -59,10 +62,13 @@ export default function LawFirmHome() {
 
       <section className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-8 pb-20 lg:grid-cols-[0.78fr_1fr]">
         <div className="rounded-[2rem] bg-[#10213f] p-8 text-white shadow-2xl shadow-[#10213f]/10">
-          <div className="aspect-[4/5] rounded-[1.5rem] border border-[#d8b56d]/30 bg-[linear-gradient(145deg,#23365c,#10213f_52%,#d8b56d_53%,#f8f4ea_53.6%,#10213f_54%)]" />
+          <VisualFrame
+            label="founder portrait"
+            className="aspect-[4/5] rounded-[1.5rem] border border-[#d8b56d]/30 bg-[radial-gradient(circle_at_50%_28%,#f8f4ea_0_10%,transparent_10.5%),linear-gradient(158deg,#2b3e62_0_28%,#10213f_28%_58%,#d8b56d_58%_61%,#f8f4ea_61%_62%,#10213f_62%)]"
+          />
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-[#d8b56d]">Founder Attorney</p>
           <h2 className="mt-3 text-3xl font-semibold">创始律师：陈衡</h2>
-          <p className="mt-4 leading-8 text-white/72">照片区域为占位设计。创始律师页面适合展示执业理念、专业履历、服务边界和沟通方式，让访客先理解这个品牌的判断标准。</p>
+          <p className="mt-4 leading-8 text-white/72">创始律师影像区域按未来正式拍摄设计，适合展示执业理念、专业履历、服务边界和沟通方式，让访客先理解这个品牌的判断标准。</p>
         </div>
         <div className="space-y-6">
           <article className="rounded-[2rem] border border-[#d8c7a4] bg-[#fffaf0] p-8">
@@ -127,8 +133,18 @@ export default function LawFirmHome() {
       </section>
 
       <section className="mx-auto w-[min(1120px,calc(100%-32px))] pb-20">
+        <div className="mb-20 grid gap-5 md:grid-cols-5">
+          <VisualFrame label="meeting room" className="min-h-48 rounded-[1.5rem] bg-[linear-gradient(135deg,#f8f4ea,#d8c7a4_42%,#10213f_43%_70%,#2c3c5f)]" />
+          <VisualFrame label="legal files" className="min-h-48 rounded-[1.5rem] bg-[repeating-linear-gradient(90deg,#fffaf0_0_20px,#d8c7a4_20px_23px),linear-gradient(#10213f,#10213f)]" />
+          <VisualFrame label="business talk" className="min-h-48 rounded-[1.5rem] bg-[radial-gradient(circle_at_28%_42%,#f8f4ea_0_12%,transparent_12.5%),radial-gradient(circle_at_72%_45%,#d8b56d_0_10%,transparent_10.5%),linear-gradient(135deg,#10213f,#23365c)]" />
+          <VisualFrame label="library" className="min-h-48 rounded-[1.5rem] bg-[repeating-linear-gradient(90deg,#10213f_0_18px,#d8b56d_18px_21px,#334466_21px_38px)]" />
+          <VisualFrame label="signing" className="min-h-48 rounded-[1.5rem] bg-[linear-gradient(160deg,#fffaf0_0_42%,#d8b56d_42%_45%,#10213f_45%_100%)]" />
+        </div>
         <StudioCta title="想做类似律师官网？" description="我们可以帮你把专业服务、团队介绍、咨询路径整理成高信任感的网站表达。" className="bg-[#10213f] text-white" buttonClassName="bg-[#d8b56d] text-[#10213f]" />
       </section>
+      <BrandFooter brand="CH / 诚衡律师事务所" line="真正的法律服务，从让客户听懂开始。" className="border-t border-[#d8c7a4] bg-[#fffaf0] text-[#10213f]" linkClassName="bg-[#10213f] text-white" />
     </main>
   );
 }
+
+

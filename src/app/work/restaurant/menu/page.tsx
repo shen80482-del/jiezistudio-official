@@ -1,4 +1,4 @@
-import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
+﻿import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
 
 const navItems = [
   { label: "品牌故事", href: "/work/restaurant/story" },
@@ -17,7 +17,7 @@ const menu = [
 export default function RestaurantMenuPage() {
   return (
     <main className="min-h-screen bg-[#fff7e8] text-[#3b2415]">
-      <DemoTopbar brand="Mellow Table" navItems={navItems} className="border-[#dfc9a5]/70 bg-[#fff7e8]/88 text-[#3b2415]" markClassName="bg-[#5b1f1f] text-[#fff7e8]" />
+      <DemoTopbar brand="Mellow Table" navItems={navItems} className="border-[#dfc9a5]/70 bg-[#fff7e8]/88 text-[#3b2415]" markClassName="bg-[#5b1f1f] text-[#fff7e8]" mark="MT" />
       <section className="mx-auto w-[min(1120px,calc(100%-32px))] py-16">
         <DemoBadge className="bg-[#5b1f1f] text-[#fff7e8]" />
         <h1 className="mt-6 text-5xl font-semibold sm:text-7xl">菜单展示</h1>
@@ -39,4 +39,6 @@ export default function RestaurantMenuPage() {
     </main>
   );
 }
+
+
 

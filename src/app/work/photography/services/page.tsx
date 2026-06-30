@@ -1,4 +1,4 @@
-import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
+﻿import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
 
 const navItems = [
   { label: "作品", href: "/work/photography/portfolio" },
@@ -16,7 +16,7 @@ const services = [
 export default function PhotographyServicesPage() {
   return (
     <main className="min-h-screen bg-[#0d0d0c] text-[#f4f0e8]">
-      <DemoTopbar brand="LightFrame Studio" navItems={navItems} className="border-white/10 bg-[#0d0d0c]/86 text-[#f4f0e8]" markClassName="bg-[#f4f0e8] text-[#0d0d0c]" />
+      <DemoTopbar brand="LightFrame Studio" navItems={navItems} className="border-white/10 bg-[#0d0d0c]/86 text-[#f4f0e8]" markClassName="bg-[#f4f0e8] text-[#0d0d0c]" mark="LF" />
       <section className="mx-auto w-[min(980px,calc(100%-32px))] py-16">
         <DemoBadge className="bg-[#f4f0e8] text-[#0d0d0c]" />
         <h1 className="mt-6 text-5xl font-semibold sm:text-7xl">服务套餐</h1>
@@ -39,4 +39,6 @@ export default function PhotographyServicesPage() {
     </main>
   );
 }
+
+
 

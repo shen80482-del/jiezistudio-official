@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../_components";
+import { BackHome, BrandFooter, DemoBadge, DemoTopbar, StudioCta, VisualFrame } from "../_components";
 
 export const metadata: Metadata = {
   title: "摄影工作室官网演示 | LightFrame Studio",
@@ -44,14 +44,17 @@ const reviews = [
 export default function PhotographyHome() {
   return (
     <main className="min-h-screen bg-[#0d0d0c] text-[#f4f0e8]">
-      <DemoTopbar brand="LightFrame Studio" navItems={navItems} className="border-white/10 bg-[#0d0d0c]/86 text-[#f4f0e8]" markClassName="bg-[#f4f0e8] text-[#0d0d0c]" />
+      <DemoTopbar brand="LightFrame Studio" navItems={navItems} className="border-white/10 bg-[#0d0d0c]/86 text-[#f4f0e8]" markClassName="bg-[#f4f0e8] text-[#0d0d0c]" mark="LF" />
 
       <section className="mx-auto w-[min(1180px,calc(100%-32px))] py-16 sm:py-24">
         <div className="max-w-4xl">
           <DemoBadge className="bg-[#f4f0e8] text-[#0d0d0c]" />
           <p className="mt-12 text-xs font-bold uppercase tracking-[0.4em] text-[#b8afa1]">LightFrame Studio</p>
-          <h1 className="mt-6 text-6xl font-semibold leading-[0.95] tracking-normal sm:text-8xl lg:text-[8.2rem]">摄影作品集官网演示</h1>
-          <p className="mt-10 max-w-2xl text-2xl font-semibold leading-snug text-[#e3dbcf]">用光影记录人的状态，用留白建立作品的高级感。</p>
+          <h1 className="mt-6 text-[3.2rem] font-semibold leading-[0.95] tracking-normal sm:text-8xl lg:text-[8.2rem]">
+            <span className="block sm:inline">摄影作品集</span>
+            <span className="block sm:inline">官网演示</span>
+          </h1>
+          <p className="mt-10 max-w-[18rem] text-2xl font-semibold leading-snug text-[#e3dbcf] [word-break:break-all] sm:max-w-2xl">用光影记录人的状态，用留白建立作品的高级感。</p>
         </div>
         <div className="mt-16 grid gap-5 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
           <div className="min-h-[420px] rounded-[2.4rem] bg-[linear-gradient(135deg,#f4f0e8,#8f877c_45%,#161514_72%)] p-8 text-[#0d0d0c] transition hover:scale-[1.01]">
@@ -67,7 +70,7 @@ export default function PhotographyHome() {
               <p className="mt-16 text-2xl font-semibold">留白、克制、视觉冲击。</p>
             </div>
             <div className="rounded-[2rem] border border-white/12 bg-[#24231f] p-7">
-              <p className="text-sm text-[#c9c0b2]">No external images. Designed for future real work.</p>
+              <p className="text-sm text-[#c9c0b2]">Designed for future real work.</p>
             </div>
           </div>
         </div>
@@ -134,8 +137,22 @@ export default function PhotographyHome() {
       </section>
 
       <section className="mx-auto w-[min(1180px,calc(100%-32px))] pb-24">
+        <div className="mb-24 grid gap-6 md:grid-cols-[1.4fr_0.8fr_1fr]">
+          <VisualFrame label="portrait" className="min-h-[420px] rounded-[2.4rem] bg-[radial-gradient(circle_at_42%_28%,#f4f0e8_0_9%,transparent_9.5%),linear-gradient(160deg,#1b1a18,#6f675f_48%,#f4f0e8_49%,#0d0d0c_70%)]" />
+          <div className="grid gap-6">
+            <VisualFrame label="wedding" className="min-h-48 rounded-[2rem] bg-[radial-gradient(circle_at_35%_35%,#f4f0e8_0_10%,transparent_10.5%),radial-gradient(circle_at_65%_38%,#c9c0b2_0_9%,transparent_9.5%),linear-gradient(135deg,#0d0d0c,#24231f)]" />
+            <VisualFrame label="film" className="min-h-48 rounded-[2rem] bg-[repeating-linear-gradient(90deg,#111_0_12px,#2f2d29_12px_16px,#f4f0e8_16px_18px)]" />
+          </div>
+          <div className="grid gap-6">
+            <VisualFrame label="brand shoot" className="min-h-48 rounded-[2rem] bg-[linear-gradient(135deg,#f4f0e8,#8f877c_45%,#0d0d0c_46%)]" />
+            <VisualFrame label="studio" className="min-h-48 rounded-[2rem] bg-[radial-gradient(circle_at_72%_25%,#f4f0e8_0_12%,transparent_12.5%),linear-gradient(145deg,#171615,#3a3936)]" />
+          </div>
+        </div>
         <StudioCta title="想做类似作品集网站？" description="我们可以把作品、服务、预约流程整理成更适合成交的个人品牌官网。" className="bg-[#f4f0e8] text-[#0d0d0c]" buttonClassName="bg-[#0d0d0c] text-white" />
       </section>
+      <BrandFooter brand="LF / LightFrame Studio" line="每一次快门，都值得拥有一个被认真展示的地方。" className="border-t border-white/10 bg-[#0d0d0c] text-[#f4f0e8]" linkClassName="bg-[#f4f0e8] text-[#0d0d0c]" />
     </main>
   );
 }
+
+

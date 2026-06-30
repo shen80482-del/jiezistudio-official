@@ -1,4 +1,4 @@
-import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
+﻿import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
 
 const navItems = [
   { label: "首页", href: "/work/law-firm" },
@@ -10,7 +10,7 @@ const navItems = [
 export default function LawContactPage() {
   return (
     <main className="min-h-screen bg-[#f8f4ea] text-[#10213f]">
-      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" />
+      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" mark="CH" />
       <section className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-8 py-16 lg:grid-cols-[0.82fr_1fr]">
         <div>
           <DemoBadge className="bg-[#10213f] text-[#f7e6b4]" />
@@ -42,4 +42,6 @@ export default function LawContactPage() {
     </main>
   );
 }
+
+
 
