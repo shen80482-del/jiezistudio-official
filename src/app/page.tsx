@@ -29,12 +29,12 @@ const services = [
 ];
 
 const trustItems = [
-  { title: "AI辅助提效", description: "更快完成页面设计与开发，把预算花在真正影响转化的部分。" },
-  { title: "商务视觉设计", description: "蓝白风格，简洁专业，避免廉价模板感。" },
-  { title: "响应式布局", description: "手机、平板、电脑都能正常访问，适配微信和浏览器场景。" },
+  { title: "响应速度快", description: "从需求沟通到页面交付保持高效推进，减少反复等待。" },
+  { title: "标准化交付", description: "利用 AI 提高开发效率，让更多时间投入到规划、设计和交付品质。" },
+  { title: "现代设计", description: "蓝白商务风格，简洁专业，避免廉价模板感。" },
+  { title: "移动端适配", description: "手机、平板、电脑都能正常访问，适配微信和浏览器场景。" },
   { title: "SEO基础优化", description: "标题、描述、页面结构更规范，利于后续搜索收录。" },
-  { title: "上线部署协助", description: "可协助绑定域名、部署网站，并完成基础上线检查。" },
-  { title: "售后维护支持", description: "交付后可继续修改内容、调整页面和维护站点。" },
+  { title: "上线支持", description: "可协助绑定域名、部署网站，并完成基础上线检查。" },
 ];
 
 const pricing = [
@@ -101,20 +101,28 @@ const portfolio = [
 
 const faqs = [
   {
-    question: "最快 24 小时上线是什么意思？",
-    answer: "在资料明确、需求简单的情况下，可先完成单页网站的可上线版本；复杂项目会根据页面数量和设计难度评估周期。",
+    question: "多久可以上线？",
+    answer: "最快24小时，复杂项目一般3~7天。",
   },
   {
-    question: "我没有文案和参考网站，可以做吗？",
-    answer: "可以。你只需要说明行业、服务内容和目标客户，我们会帮你梳理页面结构、基础文案和视觉方向。",
+    question: "支持备案吗？",
+    answer: "支持，我们会协助完成备案及上线。",
   },
   {
-    question: "价格会不会后面再加很多费用？",
-    answer: "会先确认页面数量、设计复杂度和功能需求，再给出报价范围。超出范围的新增需求会提前说明。",
+    question: "后期还能修改吗？",
+    answer: "可以，我们支持后续维护和内容更新。",
   },
   {
-    question: "网站上线后还能继续改吗？",
-    answer: "可以。交付后可继续做内容替换、页面调整、维护更新，也可以按阶段扩展更多页面。",
+    question: "支持英文网站吗？",
+    answer: "支持，中英文、多语言官网均可制作。",
+  },
+  {
+    question: "网站做好以后归谁？",
+    answer: "网站源码、域名、内容全部归客户所有。",
+  },
+  {
+    question: "为什么价格比传统建站便宜？",
+    answer: "我们利用 AI 提高开发效率，再通过人工优化和审核，在保证质量的同时降低成本。",
   },
 ];
 
@@ -211,7 +219,7 @@ export default function Home() {
             </span>
             <span className="min-w-0">
               <span className="block truncate text-sm font-bold text-ink">杰子建站工作室</span>
-              <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">AI Website Studio</span>
+              <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Professional Website Studio</span>
             </span>
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
@@ -235,13 +243,16 @@ export default function Home() {
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/82 px-4 py-2 text-sm font-medium text-brand-700 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-brand-500" />
-              AI Website Studio for Small Business
+              杰子建站工作室
             </div>
             <h1 className="max-w-4xl text-balance text-[2.65rem] font-semibold leading-[1.08] tracking-normal text-ink sm:text-6xl lg:text-[4.8rem]">
               让客户先信任你，再主动咨询你。
             </h1>
             <p className="mt-7 max-w-xl whitespace-pre-line text-lg leading-8 text-muted">
-              {"为创业者、小微企业打造专业官网。\n最快 24 小时上线。\n支持 SEO、响应式、部署和维护。"}
+              我们帮助创业者、小微企业和个人品牌，打造属于自己的第一张互联网名片。24小时起交付，响应式设计，一站式上线。
+            </p>
+            <p className="mt-8 max-w-xl text-base font-semibold leading-7 text-ink">
+              不是为了做一个网站，而是帮助你在互联网拥有值得信任的第一印象。
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -339,23 +350,21 @@ export default function Home() {
           <div>
             <SectionLabel>Founder</SectionLabel>
             <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">关于创始人</h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              我是杰子，一名飞行员，同时也是 AI 建站开发者。
-              我希望帮助创业者、小微企业和个人品牌，用更低成本、更快速度拥有自己的官网。
-              从沟通、设计到上线，全程一对一服务，尽量把复杂的建站过程变得简单、高效、可靠。
+            <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-8 text-muted">
+              {"你好，我是 Jack。\n\n一名飞行学员，也是杰子建站工作室负责人。\n\n我希望帮助创业者和个人品牌，用更清晰的规划、更专业的设计和更稳定的交付，建立自己的线上品牌。\n\n我相信，一个专业的网站，不只是展示信息。\n\n它更是创业者的第一张互联网名片。\n\n从沟通、规划、设计到上线，我们会把复杂的建站过程拆解清楚，并尽量让每一步都简单、高效、可靠。\n\n利用 AI 提高开发效率，让更多时间投入到网站规划和交付品质。"}
             </p>
-            <p className="mt-7 text-lg font-semibold text-ink">—— 杰子</p>
+            <p className="mt-7 text-lg font-semibold text-ink">—— Jack</p>
           </div>
           <div className="glass rounded-[2rem] p-7">
             <div className="flex items-center gap-5">
               <span className="grid h-20 w-20 place-items-center rounded-full bg-ink text-2xl font-semibold text-white shadow-soft">JZ</span>
               <div>
-                <p className="text-xl font-semibold text-ink">杰子</p>
-                <p className="mt-1 text-sm font-medium text-muted">Founder / AI Website Developer</p>
+                <p className="text-xl font-semibold text-ink">Jack</p>
+                <p className="mt-1 text-sm font-medium text-muted">Founder / Brand Website Studio</p>
               </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              {["飞行员", "AI", "Website"].map((tag) => (
+              {["飞行学员", "品牌规划", "网站交付"].map((tag) => (
                 <span key={tag} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-muted">
                   {tag}
                 </span>
@@ -365,6 +374,18 @@ export default function Home() {
               <p className="text-sm font-semibold text-brand-600">Service Style</p>
               <p className="mt-3 leading-7 text-muted">一对一沟通，把业务信息梳理成清晰页面，让官网更快成为你的获客入口。</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 sm:py-12">
+        <div className="container-x">
+          <div className="mx-auto max-w-3xl rounded-[2rem] border border-line bg-white px-8 py-10 text-center shadow-sm">
+            <SectionLabel>Belief</SectionLabel>
+            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-4xl">我们相信</h2>
+            <p className="mt-6 whitespace-pre-line text-xl font-semibold leading-9 text-ink">
+              {"一个网站，\n\n不是为了好看。\n\n而是为了让客户愿意联系你。"}
+            </p>
           </div>
         </div>
       </section>
@@ -470,25 +491,24 @@ export default function Home() {
             <div className="grid gap-0 lg:grid-cols-[1fr_0.72fr]">
               <div className="p-8 sm:p-12">
                 <SectionLabel>Contact</SectionLabel>
-                <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-ink sm:text-5xl">准备好拥有一个专业官网吗？</h2>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">从单页展示到企业官网，我们帮你快速上线。</p>
-                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <a href="mailto:shen80482@gmail.com?subject=官网项目咨询" className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700">
-                    免费咨询
-                    <ArrowIcon />
-                  </a>
-                  <a href="#pricing" className="inline-flex items-center justify-center rounded-full border border-line bg-white px-7 py-3.5 font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-glass">
-                    查看价格
-                  </a>
+                <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-ink sm:text-5xl">准备好拥有属于你的互联网名片了吗？</h2>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">请告诉我你的行业、网站类型、有没有参考网站，以及希望多久上线。我会免费帮你规划首页，并提供报价建议。</p>
+                <div className="mt-8 grid gap-3 text-sm font-semibold text-ink sm:grid-cols-2">
+                  {["行业", "网站类型", "有没有参考网站", "希望多久上线"].map((item) => (
+                    <div key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3">
+                      <CheckIcon />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="border-t border-line bg-white/68 p-8 sm:p-12 lg:border-l lg:border-t-0">
                 <div className="space-y-6">
                   {[
-                    ["邮箱", "shen80482@gmail.com"],
-                    ["微信", "待补充"],
-                    ["工作时间", "9:00 - 22:00"],
-                    ["服务方式", "远程沟通 / 一对一交付"],
+                    ["邮箱", "1307463941@qq.com"],
+                    ["微信", "jackwebstudio"],
+                    ["工作时间", "09:00-22:00"],
+                    ["服务方式", "微信 / 邮件 / 远程沟通"],
                   ].map(([label, value]) => (
                     <div key={label}>
                       <p className="text-sm font-semibold text-brand-600">{label}</p>
@@ -506,8 +526,10 @@ export default function Home() {
         <div className="container-x flex flex-col justify-between gap-8 text-sm text-muted md:flex-row md:items-start">
           <div>
             <p className="font-bold text-ink">杰子建站工作室</p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted">AI Website Studio</p>
-            <p className="mt-4 max-w-xl leading-7">专业官网制作 / AI智能建站 / 响应式网站 / SEO基础优化</p>
+            <p className="mt-4 max-w-xl leading-7">创业者的第一张互联网名片。</p>
+            <p className="mt-2 leading-7">邮箱：1307463941@qq.com</p>
+            <p className="leading-7">微信：jackwebstudio</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">Powered by AI. Crafted by Human.</p>
           </div>
           <div className="flex flex-wrap gap-5">
             {navItems.map((item) => (
