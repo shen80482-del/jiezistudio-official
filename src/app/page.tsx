@@ -75,27 +75,24 @@ const heroPreviews = [
 const portfolio = [
   {
     title: "律师事务所官网",
-    description: "专业、可信、适合法律咨询与品牌展示",
-    tags: ["企业官网", "服务业", "高信任感"],
+    description: "适合法律咨询、律师团队、专业服务机构展示。",
+    tags: ["专业服务", "高信任", "咨询转化"],
     tone: "from-[#ECF5FF] to-white",
+    href: "/work/law-firm",
   },
   {
-    title: "教育机构官网",
-    description: "展示课程、师资与报名入口",
-    tags: ["教育培训", "课程展示", "咨询转化"],
-    tone: "from-[#EEF8FF] to-white",
-  },
-  {
-    title: "餐饮品牌官网",
-    description: "展示门店、菜单、品牌故事与联系方式",
-    tags: ["餐饮品牌", "门店展示", "本地获客"],
-    tone: "from-[#F2F7FF] to-white",
-  },
-  {
-    title: "摄影作品集网站",
-    description: "展示作品、服务套餐与预约入口",
+    title: "摄影工作室官网",
+    description: "适合摄影师、设计师、创作者展示作品与服务套餐。",
     tags: ["个人品牌", "作品集", "预约咨询"],
-    tone: "from-[#EFF6FF] to-white",
+    tone: "from-[#F4F0EA] to-white",
+    href: "/work/photography",
+  },
+  {
+    title: "餐厅品牌官网",
+    description: "适合餐厅、咖啡店、甜品店展示品牌、菜单和餐厅信息。",
+    tags: ["餐饮品牌", "餐厅展示", "本地获客"],
+    tone: "from-[#FFF1D6] to-white",
+    href: "/work/restaurant",
   },
 ];
 
@@ -173,36 +170,28 @@ function MiniWebsitePreview({ title, tag, accent }: { title: string; tag: string
   );
 }
 
-function CaseVisual({ title, tone }: { title: string; tone: string }) {
+function WorkVisual({ title, tone }: { title: string; tone: string }) {
   return (
     <div className={`bg-gradient-to-br ${tone} border-b border-line p-6`}>
-      <div className="rounded-[1.35rem] border border-line bg-white p-4 shadow-sm">
-        <div className="flex items-center justify-between border-b border-line pb-3">
-          <div className="flex items-center gap-2">
-            <span className="h-6 w-6 rounded-full bg-ink" />
-            <span className="h-2 w-24 rounded-full bg-slate-200" />
+      <div className="rounded-[1.5rem] border border-white/70 bg-white/82 p-4 shadow-sm">
+        <div className="flex items-center justify-between">
+          <span className="rounded-full bg-ink px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">Studio Demo</span>
+          <span className="h-2 w-20 rounded-full bg-slate-200" />
+        </div>
+        <div className="mt-5 grid grid-cols-[0.82fr_1fr] gap-4">
+          <div className="space-y-3">
+            <div className="h-3 w-24 rounded-full bg-ink" />
+            <div className="h-2 w-full rounded-full bg-slate-200" />
+            <div className="h-2 w-2/3 rounded-full bg-slate-100" />
+            <div className="mt-6 h-9 w-28 rounded-full bg-brand-600" />
           </div>
-          <div className="hidden gap-2 sm:flex">
-            <span className="h-2 w-10 rounded-full bg-slate-100" />
-            <span className="h-2 w-10 rounded-full bg-slate-100" />
+          <div className="grid grid-cols-2 gap-2">
+            <span className="h-24 rounded-2xl bg-[#10213f]" />
+            <span className="h-24 rounded-2xl bg-[#e8d7b6]" />
+            <span className="col-span-2 h-16 rounded-2xl bg-[#f4f7fb]" />
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-[1fr_0.72fr] gap-4">
-          <div>
-            <span className="rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-semibold text-brand-700">{title}</span>
-            <div className="mt-4 h-3 w-28 rounded-full bg-ink" />
-            <div className="mt-3 h-2 w-full rounded-full bg-slate-100" />
-            <div className="mt-2 h-2 w-2/3 rounded-full bg-slate-100" />
-            <div className="mt-5 h-8 w-24 rounded-full bg-brand-600" />
-          </div>
-          <div className="rounded-2xl bg-[#EAF3FF] p-3">
-            <div className="h-20 rounded-xl bg-white shadow-sm" />
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              <span className="h-8 rounded-lg bg-white" />
-              <span className="h-8 rounded-lg bg-ink" />
-            </div>
-          </div>
-        </div>
+        <p className="mt-5 text-sm font-semibold text-ink">{title}</p>
       </div>
     </div>
   );
@@ -440,16 +429,19 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <SectionLabel>Portfolio</SectionLabel>
-              <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">更接近真实网站的演示案例。</h2>
+              <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">精选作品</h2>
+              <p className="mt-5 text-lg leading-8 text-muted">
+                我们正在打造一组真实可访问的行业官网演示，让客户直接看到不同业务的网站可以如何呈现。
+              </p>
             </div>
             <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-brand-700">
               预约查看完整方案 <ArrowIcon />
             </a>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {portfolio.map((item) => (
               <article key={item.title} className="overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-sm">
-                <CaseVisual title={item.title} tone={item.tone} />
+                <WorkVisual title={item.title} tone={item.tone} />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-ink">{item.title}</h3>
                   <p className="mt-3 leading-7 text-muted">{item.description}</p>
@@ -458,6 +450,9 @@ export default function Home() {
                       <span key={tag} className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">{tag}</span>
                     ))}
                   </div>
+                  <a href={item.href} className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+                    查看演示网站 <ArrowIcon />
+                  </a>
                 </div>
               </article>
             ))}
