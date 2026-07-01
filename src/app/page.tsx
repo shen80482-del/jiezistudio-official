@@ -119,7 +119,7 @@ const faqs = [
   },
   {
     question: "为什么价格比传统建站便宜？",
-    answer: "我们利用 AI 提高开发效率，再通过人工优化和审核，在保证质量的同时降低成本。",
+    answer: "我们专注于中小企业官网，不做复杂外包层层转包，把更多预算投入到真正影响网站效果的地方。",
   },
 ];
 
@@ -145,26 +145,20 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function MiniWebsitePreview({ title, tag, accent }: { title: string; tag: string; accent: string }) {
   return (
-    <div className="rounded-2xl border border-line bg-white p-4 shadow-sm">
-      <div className="flex items-center justify-between">
-        <div className="flex gap-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+    <div className="group border-t border-line/80 py-4 first:border-t-0 first:pt-0 last:pb-0">
+      <div className="flex items-start gap-4">
+        <span className={`mt-1 h-10 w-1.5 rounded-full ${accent} transition-all duration-300 group-hover:h-12`} />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-sm font-semibold text-ink">{title}</p>
+            <span className="shrink-0 rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-700">{tag}</span>
+          </div>
+          <div className="mt-3 grid grid-cols-[1fr_0.45fr] gap-3">
+            <span className="h-2 rounded-full bg-slate-200" />
+            <span className="h-2 rounded-full bg-slate-100" />
+            <span className="h-2 w-2/3 rounded-full bg-slate-100" />
+          </div>
         </div>
-        <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-semibold text-brand-700">{tag}</span>
-      </div>
-      <div className={`mt-4 h-20 rounded-xl ${accent} p-3`}>
-        <div className="h-2 w-16 rounded-full bg-white/80" />
-        <div className="mt-3 h-2 w-24 rounded-full bg-white/45" />
-        <div className="mt-2 h-2 w-14 rounded-full bg-white/35" />
-      </div>
-      <div className="mt-4 flex items-center justify-between gap-3">
-        <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-ink">{title}</p>
-          <div className="mt-2 h-1.5 w-20 rounded-full bg-slate-100" />
-        </div>
-        <span className="shrink-0 rounded-full bg-ink px-3 py-1.5 text-[11px] font-semibold text-white">咨询</span>
       </div>
     </div>
   );
@@ -234,7 +228,7 @@ export default function Home() {
               <span className="h-2 w-2 rounded-full bg-brand-500" />
               杰子建站工作室
             </div>
-            <h1 className="max-w-4xl text-balance text-[2.65rem] font-semibold leading-[1.08] tracking-normal text-ink sm:text-6xl lg:text-[4.8rem]">
+            <h1 className="max-w-4xl text-balance text-[2.35rem] font-semibold leading-[1.1] tracking-normal text-ink sm:text-5xl lg:text-[4.05rem]">
               让客户先信任你，再主动咨询你。
             </h1>
             <p className="mt-7 max-w-xl whitespace-pre-line text-lg leading-8 text-muted">
@@ -268,7 +262,7 @@ export default function Home() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="glass relative rounded-[2rem] p-4">
+            <div className="glass relative rounded-[2rem] p-3 shadow-[0_28px_90px_rgba(11,47,101,0.14)]">
               <div className="overflow-hidden rounded-[1.55rem] border border-line bg-white">
                 <div className="flex items-center justify-between border-b border-line px-5 py-4">
                   <div className="flex items-center gap-2">
@@ -276,14 +270,32 @@ export default function Home() {
                     <span className="h-3 w-3 rounded-full bg-[#FFD166]" />
                     <span className="h-3 w-3 rounded-full bg-[#06D6A0]" />
                   </div>
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">案例预览</span>
+                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">品牌官网预览</span>
                 </div>
-                <div className="grid gap-4 bg-[#F8FBFF] p-5">
-                  <div className="rounded-[1.35rem] bg-ink p-5 text-white">
-                    <p className="text-sm text-white/70">Website Templates</p>
+                <div className="grid gap-5 bg-[#F7FAFF] p-5">
+                  <div className="rounded-[1.35rem] border border-line bg-white p-5 text-ink shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-600">Brand Website Preview</p>
+                    <div className="mt-5 overflow-hidden rounded-[1.25rem] bg-ink text-white">
+                      <div className="grid min-h-56 grid-cols-[1fr_0.78fr]">
+                        <div className="p-5">
+                          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold">Hero</span>
+                          <div className="mt-10 h-3 w-40 rounded-full bg-white" />
+                          <div className="mt-4 h-3 w-28 rounded-full bg-white/50" />
+                          <div className="mt-8 grid grid-cols-2 gap-3">
+                            <span className="h-10 rounded-full bg-brand-500" />
+                            <span className="h-10 rounded-full border border-white/22" />
+                          </div>
+                        </div>
+                        <div className="relative border-l border-white/10 bg-[linear-gradient(145deg,#dcecff,#ffffff_48%,#9fc7ff)]">
+                          <span className="absolute left-6 top-6 h-20 w-28 rounded-[1.4rem] bg-white/72 shadow-sm" />
+                          <span className="absolute bottom-7 right-6 h-28 w-36 rounded-[1.8rem] bg-brand-600/85 shadow-lg" />
+                          <span className="absolute bottom-10 left-8 h-14 w-18 rounded-2xl bg-[#07111f]/80" />
+                        </div>
+                      </div>
+                    </div>
                     <p className="mt-3 text-2xl font-semibold">不同业务，都需要一个清晰可信的官网入口。</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-[1.25rem] border border-line bg-white px-5 py-1 shadow-sm">
                     {heroPreviews.map((item) => (
                       <MiniWebsitePreview key={item.title} {...item} />
                     ))}
@@ -431,7 +443,7 @@ export default function Home() {
               <SectionLabel>Portfolio</SectionLabel>
               <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">精选作品</h2>
               <p className="mt-5 text-lg leading-8 text-muted">
-                我们正在打造一组真实可访问的行业官网演示，让客户直接看到不同业务的网站可以如何呈现。
+                我们打造了一组真实可访问的行业官网演示，让你直观看到不同业务的网站可以如何呈现。
               </p>
             </div>
             <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-brand-700">

@@ -30,7 +30,7 @@ export function DemoTopbar({
         </Link>
         <div className="hidden items-center gap-5 text-sm font-semibold opacity-80 md:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:opacity-100">
+            <Link key={`${item.href}-${item.label}`} href={item.href} className="transition hover:opacity-100">
               {item.label}
             </Link>
           ))}
