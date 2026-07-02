@@ -1,4 +1,11 @@
-﻿import { BackHome, DemoBadge, DemoTopbar, StudioCta } from "../../_components";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "律师团队 | 诚衡律师事务所官网演示",
+  description: "诚衡律师事务所团队页演示，以杂志式人物介绍呈现专业方向、执业理念和沟通方式。",
+  alternates: { canonical: "/work/law-firm/team" },
+};
 
 const navItems = [
   { label: "首页", href: "/work/law-firm" },
@@ -7,39 +14,146 @@ const navItems = [
   { label: "咨询预约", href: "/work/law-firm/contact" },
 ];
 
+const imageUrl =
+  "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&fm=jpg&q=70&w=2200";
+
 const lawyers = [
-  ["CH", "陈衡", "合伙人律师", "公司顾问 / 合同纠纷"],
-  ["LY", "林予", "资深律师", "婚姻家事 / 劳动争议"],
-  ["ZW", "周闻", "执业律师", "企业合规 / 民商事争议"],
+  {
+    name: "陈衡",
+    role: "合伙人律师",
+    area: "公司顾问 / 合同争议 / 商业谈判",
+    belief: "先把商业目标和风险边界讲清楚，再讨论法律路径。",
+    communication: "适合需要长期法律支持、合同审查和重大事项判断的企业客户。",
+    services: ["常年法律顾问", "合同审查", "股权与治理", "争议策略"],
+  },
+  {
+    name: "林予",
+    role: "资深律师",
+    area: "婚姻家事 / 继承安排 / 劳动争议",
+    belief: "敏感事项更需要清楚、耐心和边界感。",
+    communication: "适合希望先梳理事实、材料和沟通方案的个人咨询者。",
+    services: ["婚姻家事", "继承安排", "劳动争议", "材料梳理"],
+  },
+  {
+    name: "周闻",
+    role: "执业律师",
+    area: "民商事争议 / 企业合规 / 用工管理",
+    belief: "每个决定都应让客户知道原因、成本和下一步。",
+    communication: "适合需要争议评估、证据整理和企业风险管理的团队。",
+    services: ["争议解决", "证据整理", "企业合规", "用工管理"],
+  },
 ];
 
-export default function LawTeamPage() {
+function LawHeader() {
   return (
-    <main className="min-h-screen bg-[#f8f4ea] text-[#10213f]">
-      <DemoTopbar brand="诚衡律师事务所" navItems={navItems} className="border-[#d8c7a4]/50 bg-[#f8f4ea]/88 text-[#10213f]" markClassName="bg-[#10213f] text-[#d8b56d]" mark="CH" />
-      <section className="mx-auto w-[min(1120px,calc(100%-32px))] py-16">
-        <DemoBadge className="bg-[#10213f] text-[#f7e6b4]" />
-        <h1 className="mt-6 text-4xl font-semibold sm:text-6xl">律师团队</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-[#44506a]">以下为虚拟演示内容，不对应真实律师或真实机构。</p>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {lawyers.map(([initials, name, role, area]) => (
-            <article key={name} className="rounded-[1.5rem] border border-[#d8c7a4] bg-white/78 p-7 shadow-sm">
-              <div className="grid h-20 w-20 place-items-center rounded-full bg-[#10213f] text-xl font-bold text-[#d8b56d]">{initials}</div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-[#8a6d35]">演示内容</p>
-              <h2 className="mt-3 text-2xl font-semibold">{name}</h2>
-              <p className="mt-2 font-semibold text-[#44506a]">{role}</p>
-              <p className="mt-5 leading-7 text-[#44506a]">{area}</p>
-            </article>
+    <header className="sticky top-0 z-40 border-b border-[#d8c7a4]/70 bg-[#fbf7ee]/92 backdrop-blur">
+      <nav className="mx-auto flex w-[min(1180px,calc(100%-32px))] items-center justify-between gap-6 py-4 text-[#0d1f3b]">
+        <Link href="/work/law-firm" className="flex items-center gap-3" aria-label="诚衡律师事务所首页">
+          <span className="grid h-10 w-10 place-items-center border border-[#0d1f3b] text-sm font-semibold">CH</span>
+          <span>
+            <span className="block text-sm font-semibold">诚衡律师事务所</span>
+            <span className="block text-[11px] uppercase tracking-[0.22em] text-[#78684e]">Studio Demo</span>
+          </span>
+        </Link>
+        <div className="hidden items-center gap-7 text-sm text-[#43506a] md:flex">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="transition hover:text-[#0d1f3b]">
+              {item.label}
+            </Link>
           ))}
         </div>
-        <div className="mt-10"><BackHome className="border-[#c9b27d] text-[#10213f]" /></div>
-      </section>
-      <section className="mx-auto w-[min(1120px,calc(100%-32px))] pb-20">
-        <StudioCta title="想做类似网站？" description="团队展示适合建立专业信任，也能让咨询者更快找到合适方向。" className="bg-[#10213f] text-white" buttonClassName="bg-[#d8b56d] text-[#10213f]" />
-      </section>
-    </main>
+        <Link href="/#contact" className="hidden border border-[#0d1f3b] px-4 py-2 text-sm font-semibold transition hover:bg-[#0d1f3b] hover:text-white sm:inline-flex">
+          返回主站
+        </Link>
+      </nav>
+    </header>
   );
 }
 
+function LawFooter() {
+  return (
+    <footer className="border-t border-[#d8c7a4] bg-[#0d1f3b] px-4 py-12 text-[#fbf7ee]">
+      <div className="mx-auto grid w-[min(1180px,100%)] gap-8 md:grid-cols-[1fr_1fr]">
+        <div>
+          <p className="text-2xl font-semibold">诚衡律师事务所</p>
+          <p className="mt-4 max-w-xl leading-7 text-white/68">团队、姓名和内容均为行业官网演示，图片用于表达商务沟通氛围，不对应真实律师。</p>
+        </div>
+        <div className="grid gap-2 text-sm text-white/70 md:justify-end">
+          <span>法律声明（演示）</span>
+          <span>隐私政策（演示）</span>
+          <span>Studio Demo / 行业官网演示</span>
+          <Link href="/#contact" className="text-[#d8b56d]">联系杰子建站工作室</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
+export default function LawTeamPage() {
+  return (
+    <main className="min-h-screen bg-[#fbf7ee] text-[#0d1f3b]">
+      <LawHeader />
 
+      <section className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-12 py-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div>
+          <p className="inline-flex border border-[#b99b5f]/50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8a6d35]">
+            Studio Demo / 行业官网演示
+          </p>
+          <p className="mt-14 text-sm uppercase tracking-[0.28em] text-[#8a6d35]">Attorneys</p>
+          <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.12] sm:text-6xl">团队介绍，应当呈现判断方式，而不只是姓名。</h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#43506a]">
+            律师团队页的价值，是让来访者理解每位律师关注什么、如何沟通、适合处理哪些问题。以下为虚拟演示内容。
+          </p>
+        </div>
+        <figure className="relative min-h-[420px] overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center grayscale-[16%]"
+            style={{ backgroundImage: `linear-gradient(180deg, rgba(13,31,59,.04), rgba(13,31,59,.34)), url(${imageUrl})` }}
+          />
+          <figcaption className="absolute bottom-4 left-4 bg-[#fbf7ee]/92 px-3 py-1 text-[11px] uppercase tracking-[0.18em]">Business Consultation / Unsplash</figcaption>
+        </figure>
+      </section>
+
+      <section className="mx-auto w-[min(1180px,calc(100%-32px))] pb-20">
+        <div className="divide-y divide-[#d8c7a4] border-y border-[#d8c7a4]">
+          {lawyers.map((lawyer, index) => (
+            <article key={lawyer.name} className="grid gap-8 py-12 lg:grid-cols-[120px_0.72fr_1fr]">
+              <p className="text-sm text-[#8a6d35]">0{index + 1}</p>
+              <div>
+                <p className="text-sm uppercase tracking-[0.24em] text-[#8a6d35]">演示人物</p>
+                <h2 className="mt-4 text-[2rem] font-semibold sm:text-4xl">{lawyer.name}</h2>
+                <p className="mt-3 text-lg text-[#43506a]">{lawyer.role}</p>
+                <p className="mt-5 leading-7 text-[#2f3d58]">{lawyer.area}</p>
+              </div>
+              <div>
+                <p className="text-2xl font-semibold leading-snug">“{lawyer.belief}”</p>
+                <p className="mt-5 leading-8 text-[#43506a]">{lawyer.communication}</p>
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#8a6d35]">
+                  {lawyer.services.map((service) => (
+                    <span key={service} className="border-b border-[#b99b5f] pb-1">
+                      {service}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-[min(1180px,calc(100%-32px))] pb-20">
+        <div className="grid gap-8 border border-[#d8c7a4] bg-[#fffaf1] p-8 sm:p-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Next Step</p>
+            <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您希望团队页更可信，重点应放在专业判断和沟通方式。</h2>
+          </div>
+          <Link href="/work/law-firm/contact" className="inline-flex border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
+            预约咨询
+          </Link>
+        </div>
+      </section>
+
+      <LawFooter />
+    </main>
+  );
+}
