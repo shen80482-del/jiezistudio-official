@@ -1,40 +1,76 @@
 const navItems = [
   { label: "首页", href: "#" },
+  { label: "作品", href: "#portfolio" },
   { label: "服务", href: "#services" },
-  { label: "优势", href: "#why-us" },
+  { label: "流程", href: "#process" },
   { label: "价格", href: "#pricing" },
-  { label: "案例", href: "#portfolio" },
   { label: "FAQ", href: "#faq" },
   { label: "联系", href: "#contact" },
 ];
 
-const heroTags = ["最快24小时上线", "响应式设计", "SEO基础优化", "可协助部署", "售后维护"];
-
-const services = [
+const works = [
   {
-    title: "单页网站",
-    description: "适合个人展示、活动宣传和简单业务介绍，用一个清晰页面完成信任建立与咨询转化。",
-    meta: "快速上线 / 清晰结构",
+    title: "律师事务所官网",
+    href: "/work/law-firm",
+    category: "专业服务",
+    description: "以秩序、可信和清晰表达为核心，适合法律咨询与专业服务品牌。",
+    palette: "bg-[#10213f]",
+    accent: "bg-[#c9a96a]",
   },
   {
-    title: "企业官网",
-    description: "为小微企业、工作室和服务型品牌搭建正式官网，展示服务、优势、案例和联系方式。",
-    meta: "品牌展示 / 获客入口",
+    title: "摄影工作室官网",
+    href: "/work/photography",
+    category: "个人品牌",
+    description: "用更克制的留白展示作品，让创作者的风格被认真看见。",
+    palette: "bg-[#161616]",
+    accent: "bg-[#d8d1c7]",
   },
   {
-    title: "中英文官网",
-    description: "面向外贸、跨境和海外客户展示业务信息，优化页面结构与中英文内容表达。",
-    meta: "跨境展示 / 英文结构",
+    title: "餐厅品牌官网",
+    href: "/work/restaurant",
+    category: "餐饮品牌",
+    description: "围绕品牌故事、菜单和氛围，建立更有温度的线上展示。",
+    palette: "bg-[#5b3324]",
+    accent: "bg-[#7f8f5b]",
   },
 ];
 
-const trustItems = [
-  { title: "响应速度快", description: "从需求沟通到页面交付保持高效推进，减少反复等待。" },
-  { title: "标准化交付", description: "利用 AI 提高开发效率，让更多时间投入到规划、设计和交付品质。" },
-  { title: "现代设计", description: "蓝白商务风格，简洁专业，避免廉价模板感。" },
-  { title: "移动端适配", description: "手机、平板、电脑都能正常访问，适配微信和浏览器场景。" },
-  { title: "SEO基础优化", description: "标题、描述、页面结构更规范，利于后续搜索收录。" },
-  { title: "上线支持", description: "可协助绑定域名、部署网站，并完成基础上线检查。" },
+const services = [
+  {
+    title: "企业官网",
+    description: "适合希望建立品牌形象、展示企业实力和服务内容的团队。",
+  },
+  {
+    title: "品牌官网",
+    description: "帮助访客更快理解您的业务，也更容易记住您的品牌。",
+  },
+  {
+    title: "作品集网站",
+    description: "把您的作品、经历和能力，整理成一个值得长期使用的网站。",
+  },
+];
+
+const process = [
+  {
+    step: "第一步",
+    title: "先了解您的业务。",
+    description: "我们会先听您介绍行业、客户、服务内容和目前最想解决的问题。",
+  },
+  {
+    step: "第二步",
+    title: "一起确认网站应该呈现什么。",
+    description: "在开始设计前，先把页面重点、内容顺序和表达方式梳理清楚。",
+  },
+  {
+    step: "第三步",
+    title: "开始设计，并保持持续沟通。",
+    description: "设计过程中保留沟通空间，让页面逐步接近您的品牌状态。",
+  },
+  {
+    step: "第四步",
+    title: "完成上线，并继续陪伴您完善网站。",
+    description: "上线不是结束，后续内容调整和页面完善也可以继续推进。",
+  },
 ];
 
 const pricing = [
@@ -42,84 +78,53 @@ const pricing = [
     name: "单页网站",
     price: "¥299 起",
     desc: "适合个人展示、活动页、简单业务介绍",
-    features: ["1 个页面", "响应式设计", "基础 SEO", "协助上线"],
+    details: ["1 个核心页面", "基础内容梳理", "协助上线"],
   },
   {
     name: "企业官网",
     price: "¥699 起",
     desc: "适合公司展示、品牌宣传、小微企业官网",
-    features: ["3-5 个页面", "响应式设计", "基础 SEO", "上线部署协助", "基础售后支持"],
+    details: ["3-5 个页面", "品牌内容结构", "交付后可继续调整"],
     highlight: true,
   },
   {
     name: "中英文官网",
     price: "¥999 起",
     desc: "适合外贸、海外客户、跨境业务展示",
-    features: ["中英文内容结构", "响应式设计", "SEO基础优化", "页面文案优化", "上线部署协助"],
+    details: ["中英文内容结构", "页面表达整理", "协助上线"],
   },
   {
     name: "高端定制",
     price: "¥1999 起",
     desc: "适合个性化设计、品牌展示、特殊行业需求",
-    features: ["定制页面设计", "高级视觉风格", "转化路径设计", "长期维护方案"],
-  },
-];
-
-const heroPreviews = [
-  { title: "企业官网", tag: "Business", accent: "bg-brand-600" },
-  { title: "作品集网站", tag: "Portfolio", accent: "bg-ink" },
-  { title: "Landing Page", tag: "Campaign", accent: "bg-[#0EA5E9]" },
-  { title: "外贸英文官网", tag: "Global", accent: "bg-[#2563EB]" },
-];
-
-const portfolio = [
-  {
-    title: "律师事务所官网",
-    description: "适合法律咨询、律师团队、专业服务机构展示。",
-    tags: ["专业服务", "高信任", "咨询转化"],
-    tone: "from-[#ECF5FF] to-white",
-    href: "/work/law-firm",
-  },
-  {
-    title: "摄影工作室官网",
-    description: "适合摄影师、设计师、创作者展示作品与服务套餐。",
-    tags: ["个人品牌", "作品集", "预约咨询"],
-    tone: "from-[#F4F0EA] to-white",
-    href: "/work/photography",
-  },
-  {
-    title: "餐厅品牌官网",
-    description: "适合餐厅、咖啡店、甜品店展示品牌、菜单和餐厅信息。",
-    tags: ["餐饮品牌", "餐厅展示", "本地获客"],
-    tone: "from-[#FFF1D6] to-white",
-    href: "/work/restaurant",
+    details: ["定制页面设计", "品牌视觉方向", "长期维护建议"],
   },
 ];
 
 const faqs = [
   {
-    question: "多久可以上线？",
-    answer: "最快24小时，复杂项目一般3~7天。",
+    question: "网站会根据需求报价吗？",
+    answer: "会。不同的行业、页面数量和功能需求都会影响最终方案。我们更希望先了解您的需求，再给出更合适的建议。",
   },
   {
-    question: "支持备案吗？",
-    answer: "支持，我们会协助完成备案及上线。",
-  },
-  {
-    question: "后期还能修改吗？",
-    answer: "可以，我们支持后续维护和内容更新。",
-  },
-  {
-    question: "支持英文网站吗？",
-    answer: "支持，中英文、多语言官网均可制作。",
+    question: "还没有完整文案，可以开始沟通吗？",
+    answer: "可以。很多客户一开始都只有大概想法，我们会先帮您梳理页面需要表达的内容。",
   },
   {
     question: "网站做好以后归谁？",
-    answer: "网站源码、域名、内容全部归客户所有。",
+    answer: "网站源码、域名和内容都应归客户所有。交付时会尽量把相关资料说明清楚。",
   },
   {
-    question: "为什么价格比传统建站便宜？",
-    answer: "我们专注于中小企业官网，不做复杂外包层层转包，把更多预算投入到真正影响网站效果的地方。",
+    question: "后期还能继续修改吗？",
+    answer: "可以。官网上线后，随着业务变化继续调整内容、页面和展示重点，是很正常的需求。",
+  },
+  {
+    question: "适合个人品牌或小团队吗？",
+    answer: "适合。我们更关注业务是否需要一个清晰可信的线上入口，而不是团队规模大小。",
+  },
+  {
+    question: "沟通前需要准备什么？",
+    answer: "您可以先准备行业、服务内容、参考网站和预算范围。如果暂时没有，我们也可以一起梳理。",
   },
 ];
 
@@ -131,62 +136,55 @@ function ArrowIcon() {
   );
 }
 
-function CheckIcon({ className = "text-brand-600" }: { className?: string }) {
+function SectionIntro({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}) {
   return (
-    <svg aria-hidden="true" className={`h-4 w-4 ${className}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4">
-      <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
-    </svg>
-  );
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">{children}</p>;
-}
-
-function MiniWebsitePreview({ title, tag, accent }: { title: string; tag: string; accent: string }) {
-  return (
-    <div className="group border-t border-line/80 py-4 first:border-t-0 first:pt-0 last:pb-0">
-      <div className="flex items-start gap-4">
-        <span className={`mt-1 h-10 w-1.5 rounded-full ${accent} transition-all duration-300 group-hover:h-12`} />
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-sm font-semibold text-ink">{title}</p>
-            <span className="shrink-0 rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-700">{tag}</span>
-          </div>
-          <div className="mt-3 grid grid-cols-[1fr_0.45fr] gap-3">
-            <span className="h-2 rounded-full bg-slate-200" />
-            <span className="h-2 rounded-full bg-slate-100" />
-            <span className="h-2 w-2/3 rounded-full bg-slate-100" />
-          </div>
-        </div>
-      </div>
+    <div className="max-w-3xl">
+      <p className="text-sm font-semibold tracking-[0.16em] text-brand-600">{eyebrow}</p>
+      <h2 className="mt-4 text-3xl font-semibold leading-tight text-ink sm:text-5xl">{title}</h2>
+      {description ? <p className="mt-5 text-lg leading-8 text-muted">{description}</p> : null}
     </div>
   );
 }
 
-function WorkVisual({ title, tone }: { title: string; tone: string }) {
+function WorkThumbnail({
+  title,
+  category,
+  palette,
+  accent,
+  large = false,
+}: {
+  title: string;
+  category: string;
+  palette: string;
+  accent: string;
+  large?: boolean;
+}) {
   return (
-    <div className={`bg-gradient-to-br ${tone} border-b border-line p-6`}>
-      <div className="rounded-[1.5rem] border border-white/70 bg-white/82 p-4 shadow-sm">
-        <div className="flex items-center justify-between">
-          <span className="rounded-full bg-ink px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">Studio Demo</span>
-          <span className="h-2 w-20 rounded-full bg-slate-200" />
+    <div className={`${palette} relative min-h-72 overflow-hidden p-6 text-white ${large ? "md:min-h-[28rem]" : ""}`}>
+      <div className="relative z-10 flex h-full flex-col justify-between">
+        <div className="flex items-center justify-between gap-4">
+          <span className="text-sm font-semibold tracking-[0.16em] text-white/70">{category}</span>
+          <span className={`h-2 w-14 ${accent}`} />
         </div>
-        <div className="mt-5 grid grid-cols-[0.82fr_1fr] gap-4">
-          <div className="space-y-3">
-            <div className="h-3 w-24 rounded-full bg-ink" />
-            <div className="h-2 w-full rounded-full bg-slate-200" />
-            <div className="h-2 w-2/3 rounded-full bg-slate-100" />
-            <div className="mt-6 h-9 w-28 rounded-full bg-brand-600" />
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <span className="h-24 rounded-2xl bg-[#10213f]" />
-            <span className="h-24 rounded-2xl bg-[#e8d7b6]" />
-            <span className="col-span-2 h-16 rounded-2xl bg-[#f4f7fb]" />
+        <div>
+          <p className="max-w-sm text-2xl font-semibold leading-tight sm:text-3xl">{title}</p>
+          <div className="mt-6 grid max-w-xs gap-2">
+            <span className="h-2 w-full bg-white/72" />
+            <span className="h-2 w-2/3 bg-white/36" />
           </div>
         </div>
-        <p className="mt-5 text-sm font-semibold text-ink">{title}</p>
       </div>
+      <div className="absolute bottom-10 right-[-18%] h-[58%] w-[54%] border border-white/14 sm:-right-10 sm:h-56 sm:w-56" />
+      <div className={`absolute right-[10%] top-[42%] h-[24%] w-[36%] ${accent} opacity-90 sm:right-10 sm:top-28 sm:h-28 sm:w-36`} />
+      <div className="absolute bottom-0 left-0 h-px w-full bg-white/16" />
     </div>
   );
 }
@@ -194,15 +192,13 @@ function WorkVisual({ title, tone }: { title: string; tone: string }) {
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/84 backdrop-blur-xl">
-        <nav className="container-x flex h-18 items-center justify-between py-3">
+      <header className="sticky top-0 z-50 border-b border-line/70 bg-white/92 backdrop-blur-md">
+        <nav className="container-x flex h-[72px] items-center justify-between gap-4 py-3">
           <a href="#" className="flex min-w-0 items-center gap-3" aria-label="杰子建站工作室首页">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-ink text-base font-semibold text-white shadow-soft">
-              JZ
-            </span>
+            <span className="grid h-10 w-10 shrink-0 place-items-center bg-ink text-sm font-semibold text-white">JZ</span>
             <span className="min-w-0">
               <span className="block truncate text-sm font-bold text-ink">杰子建站工作室</span>
-              <span className="block truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Professional Website Studio</span>
+              <span className="hidden truncate text-[11px] tracking-[0.12em] text-muted sm:block">品牌官网设计与交付</span>
             </span>
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
@@ -212,258 +208,108 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <a
-            href="#contact"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700"
-          >
-            免费咨询
+          <a href="#contact" className="hidden shrink-0 border border-ink px-4 py-2 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white sm:inline-flex">
+            聊聊想法
           </a>
         </nav>
       </header>
 
-      <section className="relative pb-16 pt-12 sm:pt-20 lg:pb-20">
-        <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_0.9fr]">
-          <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/82 px-4 py-2 text-sm font-medium text-brand-700 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-brand-500" />
-              杰子建站工作室
-            </div>
-            <h1 className="max-w-4xl text-balance text-[2.35rem] font-semibold leading-[1.1] tracking-normal text-ink sm:text-5xl lg:text-[4.05rem]">
-              让客户先信任你，再主动咨询你。
-            </h1>
-            <p className="mt-7 max-w-xl whitespace-pre-line text-lg leading-8 text-muted">
-              我们帮助创业者、小微企业和个人品牌，打造属于自己的第一张互联网名片。24小时起交付，响应式设计，一站式上线。
-            </p>
-            <p className="mt-8 max-w-xl text-base font-semibold leading-7 text-ink">
-              不是为了做一个网站，而是帮助你在互联网拥有值得信任的第一印象。
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-base font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-700"
-              >
-                免费咨询
-                <ArrowIcon />
-              </a>
-              <a
-                href="#portfolio"
-                className="inline-flex items-center justify-center rounded-full border border-line bg-white px-7 py-3.5 text-base font-semibold text-ink transition hover:-translate-y-0.5 hover:border-brand-100 hover:shadow-glass"
-              >
-                查看案例
-              </a>
-            </div>
-            <div className="mt-9 flex max-w-2xl flex-wrap gap-3">
-              {heroTags.map((item) => (
-                <span key={item} className="rounded-full border border-line bg-white/78 px-4 py-2 text-sm font-medium text-muted">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative hidden lg:block">
-            <div className="glass relative rounded-[2rem] p-3 shadow-[0_28px_90px_rgba(11,47,101,0.14)]">
-              <div className="overflow-hidden rounded-[1.55rem] border border-line bg-white">
-                <div className="flex items-center justify-between border-b border-line px-5 py-4">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-[#FF6B6B]" />
-                    <span className="h-3 w-3 rounded-full bg-[#FFD166]" />
-                    <span className="h-3 w-3 rounded-full bg-[#06D6A0]" />
-                  </div>
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">品牌官网预览</span>
-                </div>
-                <div className="grid gap-5 bg-[#F7FAFF] p-5">
-                  <div className="rounded-[1.35rem] border border-line bg-white p-5 text-ink shadow-sm">
-                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-600">Brand Website Preview</p>
-                    <div className="mt-5 overflow-hidden rounded-[1.25rem] bg-ink text-white">
-                      <div className="grid min-h-56 grid-cols-[1fr_0.78fr]">
-                        <div className="p-5">
-                          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold">Hero</span>
-                          <div className="mt-10 h-3 w-40 rounded-full bg-white" />
-                          <div className="mt-4 h-3 w-28 rounded-full bg-white/50" />
-                          <div className="mt-8 grid grid-cols-2 gap-3">
-                            <span className="h-10 rounded-full bg-brand-500" />
-                            <span className="h-10 rounded-full border border-white/22" />
-                          </div>
-                        </div>
-                        <div className="relative border-l border-white/10 bg-[linear-gradient(145deg,#dcecff,#ffffff_48%,#9fc7ff)]">
-                          <span className="absolute left-6 top-6 h-20 w-28 rounded-[1.4rem] bg-white/72 shadow-sm" />
-                          <span className="absolute bottom-7 right-6 h-28 w-36 rounded-[1.8rem] bg-brand-600/85 shadow-lg" />
-                          <span className="absolute bottom-10 left-8 h-14 w-18 rounded-2xl bg-[#07111f]/80" />
-                        </div>
-                      </div>
-                    </div>
-                    <p className="mt-3 text-2xl font-semibold">不同业务，都需要一个清晰可信的官网入口。</p>
-                  </div>
-                  <div className="rounded-[1.25rem] border border-line bg-white px-5 py-1 shadow-sm">
-                    {heroPreviews.map((item) => (
-                      <MiniWebsitePreview key={item.title} {...item} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="section bg-white">
-        <div className="container-x">
-          <div className="max-w-2xl">
-            <SectionLabel>Services</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">不只是做页面，而是帮你搭建客户愿意咨询的入口。</h2>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {services.map((service) => (
-              <article key={service.title} className="rounded-[1.5rem] border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-                <p className="text-sm font-semibold text-brand-600">{service.meta}</p>
-                <h3 className="mt-8 text-2xl font-semibold text-ink">{service.title}</h3>
-                <p className="mt-4 leading-7 text-muted">{service.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="why-us" className="section">
-        <div className="container-x">
+      <section className="border-b border-line bg-white">
+        <div className="container-x grid gap-12 py-16 sm:py-24 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
           <div className="max-w-3xl">
-            <SectionLabel>Why Us</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">为什么选择杰子建站工作室</h2>
-            <p className="mt-6 text-lg leading-8 text-muted">以接单转化为目标，控制预算、提升效率，并把页面做得专业、清晰、能上线。</p>
-          </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {trustItems.map((item) => (
-              <article key={item.title} className="glass rounded-[1.5rem] p-6">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-brand-50">
-                  <CheckIcon />
-                </span>
-                <h3 className="mt-6 text-xl font-semibold text-ink">{item.title}</h3>
-                <p className="mt-3 leading-7 text-muted">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="founder" className="section bg-white">
-        <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_0.78fr]">
-          <div>
-            <SectionLabel>Founder</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">关于创始人</h2>
-            <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-8 text-muted">
-              {"你好，我是 Jack。\n\n一名飞行学员，也是杰子建站工作室负责人。\n\n我希望帮助创业者和个人品牌，用更清晰的规划、更专业的设计和更稳定的交付，建立自己的线上品牌。\n\n我相信，一个专业的网站，不只是展示信息。\n\n它更是创业者的第一张互联网名片。\n\n从沟通、规划、设计到上线，我们会把复杂的建站过程拆解清楚，并尽量让每一步都简单、高效、可靠。\n\n利用 AI 提高开发效率，让更多时间投入到网站规划和交付品质。"}
-            </p>
-            <p className="mt-7 text-lg font-semibold text-ink">—— Jack</p>
-          </div>
-          <div className="glass rounded-[2rem] p-7">
-            <div className="flex items-center gap-5">
-              <span className="grid h-20 w-20 place-items-center rounded-full bg-ink text-2xl font-semibold text-white shadow-soft">JZ</span>
-              <div>
-                <p className="text-xl font-semibold text-ink">Jack</p>
-                <p className="mt-1 text-sm font-medium text-muted">Founder / Brand Website Studio</p>
-              </div>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {["飞行学员", "品牌规划", "网站交付"].map((tag) => (
-                <span key={tag} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-muted">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="mt-8 rounded-[1.35rem] border border-line bg-white p-5">
-              <p className="text-sm font-semibold text-brand-600">Service Style</p>
-              <p className="mt-3 leading-7 text-muted">一对一沟通，把业务信息梳理成清晰页面，让官网更快成为你的获客入口。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-12">
-        <div className="container-x">
-          <div className="mx-auto max-w-3xl rounded-[2rem] border border-line bg-white px-8 py-10 text-center shadow-sm">
-            <SectionLabel>Belief</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-4xl">我们相信</h2>
-            <p className="mt-6 whitespace-pre-line text-xl font-semibold leading-9 text-ink">
-              {"一个网站，\n\n不是为了好看。\n\n而是为了让客户愿意联系你。"}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 sm:py-12">
-        <div className="container-x">
-          <div className="rounded-[2rem] border border-brand-100 bg-ink p-8 text-white shadow-soft sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold sm:text-4xl">不知道官网怎么做？先免费规划方案。</h2>
-              <p className="mt-4 leading-8 text-white/72">告诉我们你的行业、用途和参考网站，我们会帮你梳理页面结构和报价。</p>
-            </div>
-            <a href="#contact" className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-ink transition hover:-translate-y-0.5 lg:mt-0">
-              免费规划方案
-              <ArrowIcon />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" className="section bg-white">
-        <div className="container-x">
-          <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>Pricing</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">前期接单友好的价格，先把官网上线。</h2>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {pricing.map((plan) => (
-              <article key={plan.name} className={`rounded-[1.5rem] border p-6 ${plan.highlight ? "border-brand-100 bg-ink text-white shadow-soft" : "border-line bg-white text-ink shadow-sm"}`}>
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xl font-semibold">{plan.name}</h3>
-                  {plan.highlight ? <span className="rounded-full bg-white/12 px-3 py-1 text-xs font-semibold">推荐</span> : null}
-                </div>
-                <p className="mt-6 text-4xl font-semibold">{plan.price}</p>
-                <p className={`mt-4 min-h-14 leading-7 ${plan.highlight ? "text-white/72" : "text-muted"}`}>{plan.desc}</p>
-                <ul className="mt-7 space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm">
-                      <span className="mt-0.5"><CheckIcon className={plan.highlight ? "text-white" : "text-brand-600"} /></span>
-                      <span className={plan.highlight ? "text-white/84" : "text-muted"}>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <p className="mt-7 text-center text-sm text-muted">具体价格根据页面数量、设计复杂度和功能需求报价。</p>
-        </div>
-      </section>
-
-      <section id="portfolio" className="section">
-        <div className="container-x">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <SectionLabel>Portfolio</SectionLabel>
-              <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">精选作品</h2>
-              <p className="mt-5 text-lg leading-8 text-muted">
-                我们打造了一组真实可访问的行业官网演示，让你直观看到不同业务的网站可以如何呈现。
+            <p className="text-sm font-semibold tracking-[0.16em] text-brand-600">品牌官网设计与交付</p>
+            <h1 className="mt-7 text-[2.45rem] font-semibold leading-[1.08] tracking-normal text-ink sm:hidden">
+              第一次认识
+              <br />
+              您的客户，
+              <br />
+              也会先认识
+              <br />
+              您的官网。
+            </h1>
+            <h1 className="mt-7 hidden font-semibold leading-[1.08] tracking-normal text-ink sm:block sm:text-6xl lg:text-[4.6rem]">
+              第一次认识您的客户，
+              <br />
+              也会先认识您的官网。
+            </h1>
+            <div className="mt-8 max-w-2xl space-y-5 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              <p>
+                所以，我们更愿意先理解您的品牌，
+                <br className="sm:hidden" />
+                再开始设计。
+              </p>
+              <p className="sm:hidden">
+                无论是企业官网、个人品牌，
+                <br />
+                还是作品集展示，
+                <br />
+                我们都希望它能够真实地表达您的业务，
+                <br />
+                而不仅仅是展示信息。
+              </p>
+              <p className="hidden sm:block">
+                无论是企业官网、个人品牌，还是作品集展示，
+                <br />
+                我们都希望它能够真实地表达您的业务，
+                <br />
+                而不仅仅是展示信息。
               </p>
             </div>
-            <a href="#contact" className="inline-flex items-center gap-2 font-semibold text-brand-700">
-              预约查看完整方案 <ArrowIcon />
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a href="#portfolio" className="inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 font-semibold text-white transition hover:bg-brand-700">
+                看看我们的作品
+                <ArrowIcon />
+              </a>
+              <a href="#contact" className="inline-flex items-center justify-center border border-line bg-white px-6 py-3.5 font-semibold text-ink transition hover:border-ink">
+                聊聊您的想法
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+            <a href="/work/law-firm" className="group block overflow-hidden border border-line bg-white">
+              <WorkThumbnail {...works[0]} large />
+              <div className="p-5">
+                <p className="text-sm text-muted">精选作品</p>
+                <p className="mt-2 text-xl font-semibold text-ink transition group-hover:text-brand-700">{works[0].title}</p>
+              </div>
+            </a>
+            <div className="grid gap-4">
+              {works.slice(1).map((work) => (
+                <a key={work.title} href={work.href} className="group block overflow-hidden border border-line bg-white">
+                  <WorkThumbnail {...work} />
+                  <div className="p-5">
+                    <p className="text-lg font-semibold text-ink transition group-hover:text-brand-700">{work.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="section bg-[#f8fbff]">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <SectionIntro
+              eyebrow="精选作品"
+              title="不同的行业，会有不同的表达方式。"
+              description="我们希望通过这些网站，让您更直观地了解不同品牌官网可以呈现出的样子。"
+            />
+            <a href="#contact" className="inline-flex items-center gap-2 text-base font-semibold text-ink underline decoration-line underline-offset-8 transition hover:text-brand-700">
+              讨论适合您的方向 <ArrowIcon />
             </a>
           </div>
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {portfolio.map((item) => (
-              <article key={item.title} className="overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-sm">
-                <WorkVisual title={item.title} tone={item.tone} />
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {works.map((work) => (
+              <article key={work.title} className="overflow-hidden border border-line bg-white">
+                <WorkThumbnail {...work} />
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-ink">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-muted">{item.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={item.href} className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
-                    查看演示网站 <ArrowIcon />
+                  <p className="text-sm font-semibold text-brand-600">{work.category}</p>
+                  <h3 className="mt-4 text-2xl font-semibold text-ink">{work.title}</h3>
+                  <p className="mt-4 leading-7 text-muted">{work.description}</p>
+                  <a href={work.href} className="mt-7 inline-flex items-center gap-2 font-semibold text-ink underline decoration-line underline-offset-8 transition hover:text-brand-700">
+                    查看作品 <ArrowIcon />
                   </a>
                 </div>
               </article>
@@ -472,18 +318,71 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="faq" className="section bg-white">
-        <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1fr]">
-          <div>
-            <SectionLabel>FAQ</SectionLabel>
-            <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-5xl">开始前，你可能关心这些。</h2>
+      <section id="services" className="section bg-white">
+        <div className="container-x">
+          <SectionIntro eyebrow="服务" title="我们先理解您的业务，再确认网站应该承担什么角色。" />
+          <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
+            {services.map((service) => (
+              <article key={service.title} className="bg-white p-8">
+                <p className="text-2xl font-semibold text-ink">{service.title}</p>
+                <p className="mt-5 leading-8 text-muted">{service.description}</p>
+              </article>
+            ))}
           </div>
-          <div className="space-y-4">
+        </div>
+      </section>
+
+      <section id="process" className="section bg-[#f8fbff]">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.72fr_1fr]">
+          <SectionIntro eyebrow="流程" title="合作应该清楚，也应该有持续沟通的空间。" />
+          <div className="border-l border-line">
+            {process.map((item) => (
+              <article key={item.step} className="relative border-b border-line pb-8 pl-8 pt-1 first:pt-0 last:border-b-0 last:pb-0">
+                <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 bg-brand-600" />
+                <p className="text-sm font-semibold text-brand-600">{item.step}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-ink">{item.title}</h3>
+                <p className="mt-3 max-w-2xl leading-7 text-muted">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="section bg-white">
+        <div className="container-x">
+          <SectionIntro
+            eyebrow="价格"
+            title="先给您一个预算范围，再根据需求确认具体方案。"
+            description="价格会受到页面数量、设计复杂度和后续维护需求影响。我们会先沟通清楚，再给出更合适的建议。"
+          />
+          <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+            {pricing.map((plan) => (
+              <article key={plan.name} className={`${plan.highlight ? "bg-ink text-white" : "bg-white text-ink"} p-7`}>
+                <p className="text-xl font-semibold">{plan.name}</p>
+                <p className="mt-6 text-4xl font-semibold">{plan.price}</p>
+                <p className={`mt-4 min-h-14 leading-7 ${plan.highlight ? "text-white/72" : "text-muted"}`}>{plan.desc}</p>
+                <ul className="mt-7 space-y-3">
+                  {plan.details.map((detail) => (
+                    <li key={detail} className={`border-t pt-3 text-sm ${plan.highlight ? "border-white/14 text-white/78" : "border-line text-muted"}`}>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="section bg-[#f8fbff]">
+        <div className="container-x grid gap-10 lg:grid-cols-[0.75fr_1fr]">
+          <SectionIntro eyebrow="FAQ" title="开始前，您可能会关心这些问题。" />
+          <div className="space-y-3">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-[1.35rem] border border-line bg-white p-5 shadow-sm">
+              <details key={faq.question} className="group border border-line bg-white p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-ink">
                   {faq.question}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-700 transition group-open:rotate-45">+</span>
+                  <span className="text-xl text-muted transition group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 leading-7 text-muted">{faq.answer}</p>
               </details>
@@ -492,37 +391,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="section">
+      <section id="contact" className="section bg-white">
         <div className="container-x">
-          <div className="glass overflow-hidden rounded-[2rem]">
-            <div className="grid gap-0 lg:grid-cols-[1fr_0.72fr]">
-              <div className="p-8 sm:p-12">
-                <SectionLabel>Contact</SectionLabel>
-                <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-ink sm:text-5xl">准备好拥有属于你的互联网名片了吗？</h2>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">请告诉我你的行业、网站类型、有没有参考网站，以及希望多久上线。我会免费帮你规划首页，并提供报价建议。</p>
-                <div className="mt-8 grid gap-3 text-sm font-semibold text-ink sm:grid-cols-2">
-                  {["行业", "网站类型", "有没有参考网站", "希望多久上线"].map((item) => (
-                    <div key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3">
-                      <CheckIcon />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+          <div className="grid gap-px overflow-hidden border border-line bg-line lg:grid-cols-[1fr_0.72fr]">
+            <div className="bg-white p-8 sm:p-12">
+              <p className="text-sm font-semibold tracking-[0.16em] text-brand-600">联系</p>
+              <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-tight text-ink sm:text-5xl">聊聊您的网站想法。</h2>
+              <div className="mt-7 max-w-2xl space-y-3 text-lg leading-8 text-muted">
+                <p>如果您已经有了一些想法，欢迎先和我们聊聊。</p>
+                <p>不用急着确定合作。</p>
+                <p>我们可以先一起看看，什么样的网站更适合您的业务。</p>
               </div>
-              <div className="border-t border-line bg-white/68 p-8 sm:p-12 lg:border-l lg:border-t-0">
-                <div className="space-y-6">
-                  {[
-                    ["邮箱", "1307463941@qq.com"],
-                    ["微信", "jackwebstudio"],
-                    ["工作时间", "09:00-22:00"],
-                    ["服务方式", "微信 / 邮件 / 远程沟通"],
-                  ].map(([label, value]) => (
-                    <div key={label}>
-                      <p className="text-sm font-semibold text-brand-600">{label}</p>
-                      <p className="mt-2 text-lg font-semibold text-ink">{value}</p>
-                    </div>
-                  ))}
-                </div>
+            </div>
+            <div className="bg-[#f8fbff] p-8 sm:p-12">
+              <div className="space-y-7">
+                {[
+                  ["邮箱", "1307463941@qq.com"],
+                  ["微信", "jackwebstudio"],
+                  ["工作时间", "09:00-22:00"],
+                  ["沟通方式", "微信 / 邮件 / 远程沟通"],
+                ].map(([label, value]) => (
+                  <div key={label}>
+                    <p className="text-sm font-semibold text-brand-600">{label}</p>
+                    <p className="mt-2 text-lg font-semibold text-ink">{value}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -533,14 +426,18 @@ export default function Home() {
         <div className="container-x flex flex-col justify-between gap-8 text-sm text-muted md:flex-row md:items-start">
           <div>
             <p className="font-bold text-ink">杰子建站工作室</p>
-            <p className="mt-4 max-w-xl leading-7">创业者的第一张互联网名片。</p>
-            <p className="mt-2 leading-7">邮箱：1307463941@qq.com</p>
-            <p className="leading-7">微信：jackwebstudio</p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted">Powered by AI. Crafted by Human.</p>
+            <p className="mt-4 max-w-xl leading-7">
+              认真做好每一个网站，
+              <br />
+              也认真对待每一位客户。
+            </p>
+            <p className="mt-4 text-ink">—— 杰子建站工作室</p>
           </div>
           <div className="flex flex-wrap gap-5">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="hover:text-ink">{item.label}</a>
+              <a key={item.href} href={item.href} className="hover:text-ink">
+                {item.label}
+              </a>
             ))}
           </div>
         </div>
