@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "律师团队 | 诚衡律师事务所官网演示",
-  description: "诚衡律师事务所团队页演示，以杂志式人物介绍呈现专业方向、执业理念和沟通方式。",
+  description: "诚衡律师事务所团队页演示，说明律师的专业方向、沟通方式和服务领域。",
   alternates: { canonical: "/work/law-firm/team" },
 };
 
@@ -11,7 +11,7 @@ const navItems = [
   { label: "首页", href: "/work/law-firm" },
   { label: "专业领域", href: "/work/law-firm/practice" },
   { label: "律师团队", href: "/work/law-firm/team" },
-  { label: "咨询预约", href: "/work/law-firm/contact" },
+  { label: "开始沟通", href: "/work/law-firm/contact" },
 ];
 
 const imageUrl =
@@ -100,9 +100,9 @@ export default function LawTeamPage() {
             Studio Demo / 行业官网演示
           </p>
           <p className="mt-14 text-sm uppercase tracking-[0.28em] text-[#8a6d35]">Attorneys</p>
-          <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.12] sm:text-6xl">团队介绍，应当呈现判断方式，而不只是姓名。</h1>
+          <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.12] sm:text-6xl">了解律师，也是在了解沟通方式。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#43506a]">
-            律师团队页的价值，是让来访者理解每位律师关注什么、如何沟通、适合处理哪些问题。以下为虚拟演示内容。
+            每位律师关注的领域不同，处理问题的方式也不同。以下为虚拟演示内容，用于说明法律服务团队可以如何呈现。
           </p>
         </div>
         <figure className="relative min-h-[420px] overflow-hidden">
@@ -145,10 +145,10 @@ export default function LawTeamPage() {
         <div className="grid gap-8 border border-[#d8c7a4] bg-[#fffaf1] p-8 sm:p-12 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Next Step</p>
-            <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您希望团队页更可信，重点应放在专业判断和沟通方式。</h2>
+            <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您不确定应当联系哪位律师，可以先说明问题背景。</h2>
           </div>
           <Link href="/work/law-firm/contact" className="inline-flex border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
-            预约咨询
+            开始沟通
           </Link>
         </div>
       </section>

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "咨询预约 | 诚衡律师事务所官网演示",
-  description: "诚衡律师事务所咨询预约页演示，以时间轴和克制表单引导访客理解咨询流程。",
+  title: "开始沟通 | 诚衡律师事务所官网演示",
+  description: "诚衡律师事务所开始沟通页演示，说明初步沟通、案件分析和后续处理流程。",
   alternates: { canonical: "/work/law-firm/contact" },
 };
 
@@ -11,14 +11,14 @@ const navItems = [
   { label: "首页", href: "/work/law-firm" },
   { label: "专业领域", href: "/work/law-firm/practice" },
   { label: "律师团队", href: "/work/law-firm/team" },
-  { label: "咨询预约", href: "/work/law-firm/contact" },
+  { label: "开始沟通", href: "/work/law-firm/contact" },
 ];
 
 const imageUrl =
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&fm=jpg&q=70&w=2200";
 
 const steps = [
-  ["预约咨询", "留下基础问题和联系方式，先确认是否适合进一步沟通。"],
+  ["开始沟通", "留下基础问题和联系方式，先确认是否适合进一步沟通。"],
   ["案件分析", "围绕事实、材料和目标，判断问题的法律性质与处理难度。"],
   ["制定方案", "说明可选路径、时间安排、费用边界和需要配合的事项。"],
   ["持续沟通", "重要节点及时同步，让您知道每一步为什么这样推进。"],
@@ -85,7 +85,7 @@ export default function LawContactPage() {
           <p className="mt-14 text-sm uppercase tracking-[0.28em] text-[#8a6d35]">Consultation</p>
           <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.12] sm:text-6xl">开始沟通前，先把问题放在清晰的位置。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#43506a]">
-            咨询页不需要制造紧迫感。它应该让来访者知道需要提供什么、接下来会发生什么、哪些信息会被认真对待。
+            您不需要一开始就把所有情况说完整。可以先说明事情经过、目前最担心的问题，以及希望获得的帮助。
           </p>
         </div>
         <figure className="relative min-h-[420px] overflow-hidden">
@@ -100,7 +100,7 @@ export default function LawContactPage() {
       <section className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-12 pb-20 lg:grid-cols-[0.86fr_1.14fr]">
         <div>
           <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Consultation Timeline</p>
-          <h2 className="mt-5 text-[2rem] font-semibold leading-tight sm:text-4xl">一次咨询应该如何推进。</h2>
+          <h2 className="mt-5 text-[2rem] font-semibold leading-tight sm:text-4xl">一次沟通通常如何推进。</h2>
           <div className="mt-10 border-l border-[#b99b5f] pl-8">
             {steps.map(([title, desc], index) => (
               <article key={title} className="relative pb-10 last:pb-0">
@@ -113,9 +113,9 @@ export default function LawContactPage() {
         </div>
 
         <div className="border border-[#d8c7a4] bg-[#fffaf1] p-6 sm:p-8">
-          <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Demo Form</p>
-          <h2 className="mt-4 text-3xl font-semibold">预约咨询</h2>
-          <p className="mt-4 leading-7 text-[#43506a]">以下为演示表单，不提交真实数据。真实网站可根据业务接入邮箱或在线表单。</p>
+          <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Consultation Form</p>
+          <h2 className="mt-4 text-3xl font-semibold">开始沟通</h2>
+          <p className="mt-4 leading-7 text-[#43506a]">以下为演示表单，不提交真实数据。正式沟通前，建议先简要说明问题类型和希望解决的事项。</p>
           <div className="mt-8 grid gap-4">
             {fields.map((field) => (
               <div key={field} className="border-b border-[#d8c7a4] px-1 py-4 text-[#586277]">
@@ -132,7 +132,7 @@ export default function LawContactPage() {
       <section className="mx-auto w-[min(1180px,calc(100%-32px))] pb-20">
         <div className="border border-[#d8c7a4] bg-[#fffaf1] p-8 sm:p-12">
           <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">For JZ Studio</p>
-          <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">想做类似网站？可以先和杰子建站工作室聊聊您的行业和客户。</h2>
+          <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">想整理类似的专业服务内容？可以先和杰子建站工作室聊聊您的行业和客户。</h2>
           <Link href="/#contact" className="mt-8 inline-flex border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
             联系杰子建站工作室
           </Link>

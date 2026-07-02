@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "律师事务所官网演示 | 诚衡律师事务所",
-  description: "诚衡律师事务所行业官网演示，以克制、秩序和真实摄影建立法律服务网站的信任感。",
+  description: "诚衡律师事务所行业官网演示，呈现法律服务沟通、专业领域说明和咨询路径。",
   alternates: { canonical: "/work/law-firm" },
   openGraph: {
     title: "律师事务所官网演示 | 诚衡律师事务所",
-    description: "学习高端律所网站的信息架构、留白、图片节奏和顾问式表达方式。",
+    description: "呈现法律服务沟通、专业领域说明和咨询路径。",
     url: "/work/law-firm",
     type: "website",
   },
@@ -17,7 +17,7 @@ const navItems = [
   { label: "首页", href: "/work/law-firm" },
   { label: "专业领域", href: "/work/law-firm/practice" },
   { label: "律师团队", href: "/work/law-firm/team" },
-  { label: "咨询预约", href: "/work/law-firm/contact" },
+  { label: "开始沟通", href: "/work/law-firm/contact" },
 ];
 
 const imageUrls = {
@@ -37,7 +37,7 @@ const practices = [
 ];
 
 const process = [
-  ["预约咨询", "先了解您的问题背景、沟通目标和希望解决的核心事项。"],
+  ["开始沟通", "先了解您的问题背景、沟通目标和希望解决的核心事项。"],
   ["案件分析", "整理事实、材料和关键风险，判断是否适合进一步委托。"],
   ["制定方案", "把可选路径、时间预期和费用边界说明清楚。"],
   ["持续沟通", "在每个重要节点同步进展，让您知道事情正在如何推进。"],
@@ -50,7 +50,7 @@ const faqs = [
   ["合同纠纷通常如何开始？", "通常先看合同文本、履行记录和沟通证据，再判断协商、函件或诉讼等路径。"],
   ["公司顾问适合哪些企业？", "适合需要长期处理合同、用工、股权、合规和商业谈判问题的团队。"],
   ["费用会提前说明吗？", "会。正式委托前，应先说明服务范围、计费方式和可能产生的其他成本。"],
-  ["这个网站是真实律所吗？", "不是。诚衡律师事务所为行业官网演示，用于展示法律服务网站的设计方向。"],
+  ["这个页面是真实律所吗？", "不是。诚衡律师事务所为行业官网演示，不对应真实律所或真实律师。"],
 ];
 
 function LawHeader() {
@@ -108,7 +108,7 @@ function LawFooter() {
         <div>
           <p className="text-2xl font-semibold">诚衡律师事务所</p>
           <p className="mt-4 max-w-lg leading-7 text-white/68">
-            这是杰子建站工作室设计的法律服务行业官网演示，不对应真实律所或真实律师。
+            这是杰子建站工作室制作的法律服务行业官网演示，不对应真实律所或真实律师。
           </p>
           <p className="mt-6 text-xs uppercase tracking-[0.22em] text-[#d8b56d]">Studio Demo / 行业官网演示</p>
         </div>
@@ -124,7 +124,7 @@ function LawFooter() {
         <div>
           <p className="text-sm font-semibold text-[#d8b56d]">联系方式</p>
           <div className="mt-4 grid gap-2 text-sm text-white/70">
-            <Link href="/work/law-firm/contact">咨询预约</Link>
+            <Link href="/work/law-firm/contact">开始沟通</Link>
             <Link href="/#contact">联系杰子建站工作室</Link>
             <span>法律声明（演示）</span>
             <span>隐私政策（演示）</span>
@@ -150,14 +150,15 @@ export default function LawFirmHome() {
               <span className="block">先被清楚理解。</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#43506a]">
-              诚衡律师事务所是一组法律服务行业官网演示。页面以清晰的信息顺序、克制的视觉语言和真实办公影像，帮助访客判断：这里是否适合继续沟通。
+              诚衡律师事务所是一组行业官网演示。
+              我们希望用真实的办公影像、清晰的信息结构和克制的页面表达，呈现法律服务网站应有的专业感与可信度。
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link href="/work/law-firm/practice" className="border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
-                了解专业领域
+                查看专业领域
               </Link>
               <Link href="/work/law-firm/contact" className="border border-[#b99b5f] px-6 py-3 text-center text-sm font-semibold text-[#0d1f3b] transition hover:border-[#0d1f3b]">
-                预约咨询
+                开始沟通
               </Link>
             </div>
           </div>
@@ -168,9 +169,9 @@ export default function LawFirmHome() {
       <section className="border-y border-[#d8c7a4] bg-[#fffaf1]">
         <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-8 py-14 md:grid-cols-3">
           {[
-            ["为什么会高级", "用大图、细线、编号和留白建立秩序，不依赖夸张装饰。"],
-            ["为什么值得信任", "先说明服务边界和沟通路径，再引导访客进入咨询。"],
-            ["为什么比上一版更好", "删除卡片堆叠和几何占位图，转向真实律所网站的阅读节奏。"],
+            ["每一次沟通，都从理解问题开始", "在讨论解决方案之前，我们更愿意先了解事情的经过、您的目标，以及希望解决的问题。"],
+            ["专业判断，需要建立在充分沟通之上", "不同案件有不同背景。清晰的沟通，可以帮助双方更快找到真正需要关注的重点。"],
+            ["让复杂的信息，更容易理解", "我们希望通过清晰的结构、准确的表达和稳定的节奏，让每一次沟通都更加高效。"],
           ].map(([title, desc]) => (
             <article key={title} className="border-l border-[#b99b5f] pl-5">
               <h2 className="text-lg font-semibold">{title}</h2>
@@ -188,7 +189,8 @@ export default function LawFirmHome() {
             <span className="block">而是判断入口。</span>
           </h2>
           <p className="mt-6 leading-8 text-[#43506a]">
-            法律服务网站应帮助访问者快速定位自己的问题，也让对方知道下一步该如何开始。
+            不同领域的问题，需要不同的处理方式。
+            您可以从最接近自己需求的方向开始了解，再决定下一步如何沟通。
           </p>
         </div>
         <div className="divide-y divide-[#d8c7a4] border-y border-[#d8c7a4]">
@@ -206,9 +208,15 @@ export default function LawFirmHome() {
         <PhotoPanel image={imageUrls.documents} label="Documents / Unsplash" className="min-h-[420px]" />
         <div className="border-t border-[#d8c7a4] pt-8">
           <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Founder Note</p>
-          <h2 className="mt-5 text-[2rem] font-semibold leading-tight sm:text-4xl">专业不是距离感，而是让您知道问题正在被认真处理。</h2>
+          <h2 className="mt-5 text-[2rem] font-semibold leading-tight sm:text-4xl">每一个问题，都值得认真对待。</h2>
           <p className="mt-6 leading-8 text-[#43506a]">
-            律师站不需要用强烈的销售语言证明自己。它更需要准确、克制、有边界的表达，让访客在阅读过程中逐步建立判断。
+            很多法律问题，并不需要第一时间得到答案。
+          </p>
+          <p className="mt-4 leading-8 text-[#43506a]">
+            更重要的是先理解事实、厘清重点，再判断下一步应该如何处理。
+          </p>
+          <p className="mt-4 leading-8 text-[#43506a]">
+            我们希望通过稳定、克制的表达方式，让客户在阅读过程中逐步建立信任，而不是依赖夸张的宣传语言。
           </p>
           <Link href="/work/law-firm/team" className="mt-8 inline-flex border-b border-[#0d1f3b] pb-1 text-sm font-semibold">
             阅读律师团队
@@ -258,13 +266,13 @@ export default function LawFirmHome() {
           <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Next Step</p>
           <div className="mt-5 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <h2 className="max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您正在考虑法律服务网站，可以先从信任路径开始梳理。</h2>
+              <h2 className="max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您正在整理法律服务内容，可以先从客户最关心的问题开始。</h2>
               <p className="mt-5 max-w-2xl leading-8 text-[#43506a]">
-                这类网站的价值，不是把内容放上去，而是让访客知道：谁在处理问题、如何开始沟通、后续会怎样推进。
+                对专业服务来说，清楚说明服务范围、沟通方式和后续流程，往往比堆砌信息更重要。
               </p>
             </div>
             <Link href="/#contact" className="inline-flex border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
-              想做类似网站？联系杰子建站工作室
+              想整理类似专业服务内容？联系杰子建站工作室
             </Link>
           </div>
         </div>

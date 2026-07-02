@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "专业领域 | 诚衡律师事务所官网演示",
-  description: "诚衡律师事务所专业领域页演示，以编号、细线和分栏阅读呈现法律服务范围。",
+  description: "诚衡律师事务所专业领域页演示，说明不同法律问题的处理方向和沟通方式。",
   alternates: { canonical: "/work/law-firm/practice" },
 };
 
@@ -11,7 +11,7 @@ const navItems = [
   { label: "首页", href: "/work/law-firm" },
   { label: "专业领域", href: "/work/law-firm/practice" },
   { label: "律师团队", href: "/work/law-firm/team" },
-  { label: "咨询预约", href: "/work/law-firm/contact" },
+  { label: "开始沟通", href: "/work/law-firm/contact" },
 ];
 
 const imageUrl =
@@ -40,7 +40,7 @@ const practices = [
     num: "04",
     title: "劳动与雇佣",
     desc: "协助处理劳动合同、薪酬争议、离职沟通、工伤处理和企业用工管理。",
-    note: "页面应让来访者先理解问题类型，再决定是否进入正式咨询。",
+    note: "建议先确认争议背景、合同材料和沟通记录，再判断下一步处理方式。",
   },
 ];
 
@@ -102,11 +102,11 @@ export default function LawPracticePage() {
           <p className="mt-14 text-sm uppercase tracking-[0.28em] text-[#8a6d35]">Practice Areas</p>
           <h1 className="mt-6 text-[2.25rem] font-semibold leading-[1.12] sm:text-6xl">专业领域，应当让来访者快速找到方向。</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#43506a]">
-            法律服务页面不适合做成模板卡片。它需要让每个问题有明确边界、说明和下一步沟通方式。
+            不同领域的问题，需要不同的处理方式。您可以从最接近自己需求的方向开始了解，再决定下一步如何沟通。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/work/law-firm/contact" className="border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
-              预约咨询
+              开始沟通
             </Link>
             <Link href="/work/law-firm" className="border border-[#b99b5f] px-6 py-3 text-center text-sm font-semibold">
               返回首页
@@ -145,7 +145,7 @@ export default function LawPracticePage() {
           <p className="text-sm uppercase tracking-[0.26em] text-[#8a6d35]">Next Step</p>
           <h2 className="mt-5 max-w-3xl text-[2rem] font-semibold leading-tight sm:text-4xl">如果您的问题不确定属于哪个领域，可以先从一次初步沟通开始。</h2>
           <Link href="/work/law-firm/contact" className="mt-8 inline-flex border border-[#0d1f3b] bg-[#0d1f3b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-transparent hover:text-[#0d1f3b]">
-            预约咨询
+            开始沟通
           </Link>
         </div>
       </section>
